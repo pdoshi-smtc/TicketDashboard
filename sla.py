@@ -65,7 +65,7 @@ print("Starting Jira issue fetch (ALL issues)...")
 issues = jira.enhanced_search_issues(
     jql_str=JQL,
     expand="changelog",
-    maxResults=False
+    maxResults=20
 )
 
 print(f"Total tickets fetched: {len(issues)}")
@@ -115,7 +115,7 @@ for issue in issues:
     closed_min = int(time_in_status.get("CLOSED", 0) / 60)
 
     # ---- Time to Resolution (OPEN + WIP + REVIEW) ----
-    time_to_resolution_hr = round((open_min + wip_min + review_min) / 60, 2)
+    time_to_resolution_min = (open_min + wip_min + review_min)
 
     # ---- SLA Status ----
     sla_minutes = get_sla_minutes(fields.priority.name if fields.priority else None)
@@ -124,9 +124,9 @@ for issue in issues:
         sla_status = None
     else:
         if fields.resolutiondate:
-            sla_status = "Met" if (time_to_resolution_hr * 60) <= sla_minutes else "Breached"
+            sla_status = "Met" if time_to_resolution_min <= sla_minutes else "Breached"
         else:
-            sla_status = "Within SLA" if (time_to_resolution_hr * 60) <= sla_minutes else "Breached"
+            sla_status = "Within SLA" if time_to_resolution_min <= sla_minutes else "Breached"
 
     # ---- CSV Row ----
     rows.append({
@@ -155,7 +155,7 @@ for issue in issues:
         "COMPLETED (Minutes)": completed_min,
         "CANCELLED (Minutes)": cancelled_min,
         "CLOSED (Minutes)": closed_min,
-        "Time to Resolution (Hours)": time_to_resolution_hr,
+        "Time to Resolution (Minutes)": time_to_resolution_min,
 
         # ---- SLA ----
         "SLA Status": sla_status,
