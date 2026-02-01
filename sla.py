@@ -162,7 +162,7 @@ for issue in issues:
     })
 
 # ==========================
-# EXPORT CSV
+# EXPORT CSV File
 # ==========================
 filename = "data/GNOC_Incident_Time.csv"
 df = pd.DataFrame(rows)
