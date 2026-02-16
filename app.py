@@ -8,7 +8,7 @@ import os
 # ==========================
 # CONFIG
 # ==========================
-JIRA_URL = os.getenv("JIRA_BASE_URL", "https://sierrawireless.atlassian.net")
+JIRA_URL = "https://sierrawireless.atlassian.net"
 USERNAME = os.getenv("JIRA_USER_EMAIL")
 PASSWORD = os.getenv("JIRA_API_TOKEN")
 
