@@ -12,7 +12,7 @@ JIRA_URL = os.getenv("JIRA_BASE_URL", "https://sierrawireless.atlassian.net")
 USERNAME = os.getenv("JIRA_USER_EMAIL")
 PASSWORD = os.getenv("JIRA_API_TOKEN")
 
-JQL = 'project = GNOC AND issuetype = Incident'
+JQL = 'project = GNOC AND issuetype = Incident AND created >= "2026-01-17" '
 
 VALID_STATUSES = {
     "OPEN",
