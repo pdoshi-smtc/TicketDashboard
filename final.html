@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Availability — Telecom Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0e0e11;--bg1:#141417;--bg2:#1a1a1f;--bg3:#222228;--bg4:#2a2a32;
+  --border:#2a2a32;--border-h:#3a3a45;
+  --t1:#e8e8ec;--t2:#a0a0b0;--t3:#6a6a7a;--t4:#484858;
+  --green:#73bf69;--green-bg:rgba(115,191,105,.08);
+  --yellow:#f2cc0c;--yellow-bg:rgba(242,204,12,.08);
+  --orange:#ff9830;--orange-bg:rgba(255,152,48,.08);
+  --red:#f2495c;--red-bg:rgba(242,73,92,.08);
+  --blue:#5794f2;--blue-bg:rgba(87,148,242,.08);
+  --purple:#b877d9;--purple-bg:rgba(184,119,217,.08);
+  --cyan:#8ab8ff;
+  --r:4px;--r2:8px;
+  --grafana-teal:#00c7b3;
+  /* Softer gauge colors */
+  --g-green:#56a54b;--g-yellow:#c9a820;--g-orange:#cc7a28;--g-red:#b8404e;
+}
+html{font-size:14px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+.overlay{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}
+.overlay.hide{display:none}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ov-text{font-size:.82rem;color:var(--t3)}
+.err-ico{font-size:2rem}.err-title{font-size:1.1rem;font-weight:700;color:var(--red)}
+.err-msg{font-size:.84rem;color:var(--t2);max-width:420px;text-align:center;line-height:1.55}
+.err-hint{font-size:.76rem;color:var(--t3);background:var(--bg2);padding:10px 16px;border-radius:var(--r);border:1px solid var(--border);margin-top:4px}
+
+.shell{max-width:1520px;margin:0 auto;padding:0 20px 40px}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 0;margin-bottom:2px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;background:var(--bg)}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.tb-icon{width:32px;height:32px;border-radius:var(--r);background:linear-gradient(135deg,var(--green),var(--grafana-teal));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#111;flex-shrink:0}
+.tb-title{font-size:1.05rem;font-weight:700;letter-spacing:-.2px}
+.tb-sep{color:var(--t4);font-weight:300;font-size:1.1rem}
+.tb-page{font-size:.88rem;color:var(--t2);font-weight:500}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.tb-pill{display:flex;align-items:center;gap:5px;background:var(--green-bg);border:1px solid rgba(115,191,105,.2);padding:4px 11px;border-radius:100px;font-size:.7rem;font-weight:600;color:var(--green);letter-spacing:.3px}
+.tb-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.tb-time{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--t3)}
+.auto-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 11px;border-radius:100px;font-size:.68rem;font-weight:600;
+  cursor:pointer;transition:all .2s;border:1px solid var(--border);
+  background:var(--bg2);color:var(--t3);letter-spacing:.3px;
+}
+.auto-btn:hover{border-color:var(--border-h);color:var(--t2)}
+.auto-btn.on{background:rgba(87,148,242,.1);border-color:rgba(87,148,242,.3);color:var(--blue)}
+.auto-btn .auto-ico{width:14px;height:14px;display:flex;align-items:center;justify-content:center}
+
+.wk-bar{display:flex;align-items:center;gap:8px;padding:10px 0 14px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.wk-label{font-size:.68rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.wk-arr{width:28px;height:28px;border-radius:var(--r);background:var(--bg2);border:1px solid var(--border);color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:all .15s;flex-shrink:0}
+.wk-arr:hover{background:var(--bg3);color:var(--t1);border-color:var(--border-h)}
+.wk-arr:disabled{opacity:.25;cursor:default;pointer-events:none}
+.wk-track{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;padding:1px 0}
+.wk-track::-webkit-scrollbar{display:none}
+.wk-c{padding:5px 12px;border-radius:var(--r);background:var(--bg2);border:1px solid var(--border);color:var(--t3);font-size:.7rem;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+.wk-c:hover{background:var(--bg3);color:var(--t2);border-color:var(--border-h)}
+.wk-c.act{background:var(--blue-bg);border-color:rgba(87,148,242,.35);color:var(--blue);font-weight:700}
+
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.kpi{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;position:relative;overflow:hidden}
+.kpi-label{font-size:.65rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.kpi-val{font-family:'JetBrains Mono',monospace;font-size:1.65rem;font-weight:700;letter-spacing:-1px;line-height:1.1}
+.kpi-val.kg{color:var(--green)}.kpi-val.kb{color:var(--blue)}.kpi-val.kc{color:var(--cyan)}.kpi-val.ky{color:var(--yellow)}
+.kpi-sub{font-size:.68rem;color:var(--t3);margin-top:4px;display:flex;align-items:center;gap:4px}
+.kpi-tag{font-size:.6rem;font-weight:700;padding:1px 6px;border-radius:var(--r);background:var(--green-bg);color:var(--green)}
+
+/* Platform gauge row */
+.g-row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:16px}
+.g-panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:12px 8px 10px;text-align:center}
+.g-panel-title{font-size:.68rem;font-weight:600;color:var(--t2);margin-bottom:8px;letter-spacing:.2px}
+.g-panel-svc{font-size:.58rem;color:var(--t4);margin-bottom:2px}
+.gauge-wrap{position:relative;width:100%;max-width:170px;margin:0 auto}
+.gauge-wrap svg{width:100%;display:block}
+.g-val{position:absolute;bottom:22%;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.1rem}
+
+/* Detail panel */
+.detail-panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden}
+.dp-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border)}
+.dp-title{font-size:.82rem;font-weight:600}
+.dp-tag{font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:var(--r);text-transform:uppercase;letter-spacing:.5px}
+.dp-tag-g{background:var(--green-bg);color:var(--green)}
+.dp-tag-r{background:var(--red-bg);color:var(--red)}
+.dp-body{width:80%;margin:0 auto;padding:16px 0 20px}
+
+.plat-sec{border-top:1px solid var(--border);padding:0}
+.plat-sec:first-child{border-top:none}
+.plat-hdr{padding:12px 0 6px;font-size:.7rem;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.8px}
+
+.svc-gauge-row{display:flex;gap:10px;padding-bottom:14px;justify-content:center;flex-wrap:wrap}
+.svc-gauge-card{
+  flex:1;min-width:180px;max-width:300px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);
+  padding:14px 10px 10px;display:flex;flex-direction:column;align-items:center;
+  transition:all .2s;
+}
+.svc-gauge-card:hover{border-color:var(--border-h);background:var(--bg3)}
+
+.sgc-label{display:flex;align-items:center;gap:7px;font-weight:600;font-size:.8rem;margin-bottom:6px}
+.sgc-ico{width:22px;height:22px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sgc-ico-d{background:var(--blue-bg);color:var(--blue)}
+.sgc-ico-s{background:var(--purple-bg);color:var(--purple)}
+.sgc-ico-v{background:var(--green-bg);color:var(--green)}
+
+.sgc-gauge{position:relative;width:140px;margin:0 auto}
+.sgc-gauge svg{width:100%;display:block}
+.sgc-gauge-val{position:absolute;bottom:20%;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.95rem}
+
+/* Heatmap */
+.hm-panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden}
+.hm-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border)}
+.hm-title{font-size:.82rem;font-weight:600}
+.hm-body{padding:14px 16px;overflow-x:auto}
+.hm-g{display:grid;gap:2px;align-items:center}
+.hm-l{font-size:.62rem;font-weight:600;color:var(--t3);text-align:right;padding-right:8px;white-space:nowrap}
+.hm-h{font-size:.5rem;font-weight:600;color:var(--t4);text-align:center}
+.hm-c{aspect-ratio:1;border-radius:2px;min-height:10px;transition:all .15s;cursor:default}
+.hm-cg{background:#5a9a52}.hm-cy{background:#b8a030}.hm-co{background:#c07828}.hm-cr{background:#a8404a}
+.hm-c.sel{outline:1.5px solid #fff;outline-offset:1px;z-index:2;position:relative}
+
+.foot{text-align:center;padding:16px 0;border-top:1px solid var(--border)}
+.foot-t{font-size:.66rem;color:var(--t4)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fadeIn .35s ease-out both}
+.fd1{animation-delay:.02s}.fd2{animation-delay:.05s}.fd3{animation-delay:.08s}
+.fd4{animation-delay:.11s}.fd5{animation-delay:.14s}.fd6{animation-delay:.17s}
+
+@media(max-width:1200px){.g-row{grid-template-columns:repeat(3,1fr)}.kpi-row{grid-template-columns:repeat(2,1fr)}.dp-body{width:95%}}
+@media(max-width:800px){.g-row{grid-template-columns:repeat(2,1fr)}.kpi-row{grid-template-columns:1fr}.shell{padding:0 10px 30px}.dp-body{width:100%}.svc-gauge-row{flex-direction:column}.svc-gauge-card{max-width:100%}}
+</style>
+</head>
+<body>
+
+<div class="overlay" id="loader"><div class="spinner"></div><div class="ov-text">Loading Data.csv…</div></div>
+<div class="overlay hide" id="errScr"><div class="err-ico">⚠️</div><div class="err-title">Data Load Failed</div><div class="err-msg" id="errMsg"></div><div class="err-hint">Place <b>Data.csv</b> in the same folder as this HTML file.</div></div>
+<div class="shell" id="app" style="display:none"></div>
+
+<script>
+async function loadCSV(){
+  const r=await fetch('Data.csv?_='+Date.now());
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return parseCSV(await r.text());
+}
+function parseCSV(raw){
+  const L=raw.split('\n').map(l=>l.replace(/^\uFEFF/,'').replace(/\r/g,'').split(','));
+  const hours=parseInt(L[0][1])||168;
+  const wNums=L[1].slice(1).map(Number);
+  const wDates=L[2].slice(1);
+  const weeks=wNums.map((n,i)=>({num:n,date:wDates[i]||''}));
+  const nw=weeks.length;
+  const platforms={};let cp=null,sec='dt';
+  for(let i=3;i<L.length;i++){
+    const f=(L[i][0]||'').trim();
+    if(f.toUpperCase().startsWith('SERVICE AVAILABILITY')){sec='av';cp=null;continue}
+    if(!f)continue;
+    const isBullet=f.startsWith('•')||f.startsWith('\u2022')||f.startsWith('- ')||f.startsWith('* ');
+    if(!isBullet){cp=f;if(!platforms[cp])platforms[cp]={services:[],dt:{},av:{}};continue}
+    if(!cp)continue;
+    const sn=f.replace(/^[•·\u2022\-\*]\s*/,'').trim().toUpperCase();
+    const vals=L[i].slice(1,nw+1);
+    if(sec==='dt'){
+      if(!platforms[cp].services.includes(sn))platforms[cp].services.push(sn);
+      platforms[cp].dt[sn]=vals.map(v=>parseFloat(v)||0);
+    }else{
+      platforms[cp].av[sn]=vals.map(v=>{const n=parseFloat((v||'').replace('%',''));return isNaN(n)?100:n});
+    }
+  }
+  return{hours,weeks,platforms};
+}
+
+let D=null,si=0;
+let autoOn=false,autoTimer=null,scrollDir=1,scrollPos=0;
+
+function startAuto(){
+  autoOn=true;
+  scrollPos=0;scrollDir=1;
+  autoTick();
+}
+function stopAuto(){
+  autoOn=false;
+  if(autoTimer)clearTimeout(autoTimer);
+  autoTimer=null;
+  render();
+}
+function autoTick(){
+  if(!autoOn)return;
+  const body=document.documentElement;
+  const maxScroll=body.scrollHeight-window.innerHeight;
+
+  // Scroll the page
+  scrollPos+=2;
+  if(scrollPos>=maxScroll){
+    // Reached bottom — pause, then switch week and scroll back to top
+    scrollPos=maxScroll;
+    window.scrollTo({top:scrollPos,behavior:'auto'});
+    autoTimer=setTimeout(()=>{
+      if(!autoOn)return;
+      // Move to next week (loop back to first)
+      si=(si+1)%D.weeks.length;
+      render();
+      window.scrollTo({top:0,behavior:'auto'});
+      scrollPos=0;
+      // Pause at top before scrolling again
+      autoTimer=setTimeout(()=>autoTick(),2000);
+    },2500);
+    return;
+  }
+  window.scrollTo({top:scrollPos,behavior:'auto'});
+  autoTimer=setTimeout(()=>autoTick(),30);
+}
+
+function fmtD(d){if(!d)return'';const p=d.split('/'),m='Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');return`${m[+p[0]-1]} ${p[1]}, ${p[2]}`}
+function endD(d){if(!d)return'';const p=d.split('/'),dt=new Date(+p[2],+p[0]-1,+p[1]);dt.setDate(dt.getDate()+6);const m='Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');return`${m[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`}
+
+function sIco(s){
+  const svg=(p,c)=>`<div class="sgc-ico ${c}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">${p}</svg></div>`;
+  if(s==='DATA')return svg('<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>','sgc-ico-d');
+  if(s==='SMS')return svg('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>','sgc-ico-s');
+  if(s==='VOICE')return svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.88.37 1.85.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.33 1.93.57 2.81.7A2 2 0 0 1 22 16.92z"/>','sgc-ico-v');
+  return'';
+}
+function pctCol(v){return v>=99.9?'sg':v>=95?'sy':'sr'}
+
+/* Softer gauge colors */
+function gCol(pct){return pct>=95?'#5a9a52':pct>=80?'#b8a030':pct>=50?'#c07828':'#a8404a'}
+
+/* Grafana Memory-style gauge builder */
+function mkGauge(pct,cx,cy,r,sw,vb){
+  const D=Math.PI/180;
+  const S=130, E=410;
+  const totalDeg=E-S;
+  const pt=f=>{const a=(S+f*totalDeg)*D;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};
+  const arc=(f1,f2)=>{
+    const[x1,y1]=pt(f1),[x2,y2]=pt(f2);
+    const sweep=Math.abs(f2-f1)*totalDeg;
+    return`M${x1.toFixed(1)},${y1.toFixed(1)}A${r},${r},0,${sweep>180?1:0},1,${x2.toFixed(1)},${y2.toFixed(1)}`;
+  };
+  const bg=`<path d="${arc(0,1)}" fill="none" stroke="#2a2a32" stroke-width="${sw+3}" stroke-linecap="round"/>`;
+  const segs=[
+    [0,.55,'#5a9a52',.18],
+    [.55,.75,'#b8a030',.16],
+    [.75,.9,'#c07828',.18],
+    [.9,1,'#a8404a',.22]
+  ];
+  const segSvg=segs.map(([a,b,c,o])=>`<path d="${arc(a,b)}" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="butt" opacity="${o}"/>`).join('');
+  const vf=Math.max(Math.min(pct/100,1),0.005);
+  const fc=gCol(pct);
+  const fill=`<path d="${arc(0,vf)}" fill="none" stroke="${fc}" stroke-width="${sw}" stroke-linecap="round" opacity=".85"/>`;
+  return{bg,segSvg,fill,fc};
+}
+
+/* Platform gauge */
+function gaugeHTML(pct){
+  const cx=100,cy=100,r=75,sw=14;
+  const g=mkGauge(pct,cx,cy,r,sw);
+  return`<div class="gauge-wrap"><svg class="gauge-svg" viewBox="8 8 184 145">${g.bg}${g.segSvg}${g.fill}</svg><div class="g-val" style="color:${g.fc}">${pct.toFixed(1)}%</div></div>`;
+}
+
+/* Detail card gauge */
+function cardGauge(pct){
+  const cx=75,cy=75,r=58,sw=12;
+  const g=mkGauge(pct,cx,cy,r,sw);
+  return`<div class="sgc-gauge"><svg viewBox="2 5 146 112">${g.bg}${g.segSvg}${g.fill}</svg><div class="sgc-gauge-val" style="color:${g.fc}">${pct.toFixed(1)}%</div></div>`;
+}
+
+function render(){
+  const w=D.weeks[si],P=D.platforms,pN=Object.keys(P),nw=D.weeks.length;
+
+  let allA=[],allDt=[],tSvc=0;
+  for(const pn of pN)for(const sn of P[pn].services){
+    allA.push((P[pn].av[sn]||[])[si]??100);
+    allDt.push((P[pn].dt[sn]||[])[si]??0);tSvc++;
+  }
+  const avgA=allA.length?allA.reduce((a,b)=>a+b,0)/allA.length:0;
+  const tDt=allDt.reduce((a,b)=>a+b,0);
+  let streak=0;for(let wi=si;wi>=0;wi--){let ok=true;for(const pn of pN)for(const sn of P[pn].services)if(((P[pn].av[sn]||[])[wi]||0)<100)ok=false;if(ok)streak++;else break}
+
+  const chips=D.weeks.map((wk,i)=>`<div class="wk-c${i===si?' act':''}" data-i="${i}">W${wk.num}</div>`).join('');
+
+  const gaugePanels=pN.map(pn=>{
+    const svcs=P[pn].services,avg=svcs.map(sn=>(P[pn].av[sn]||[])[si]??100).reduce((a,b)=>a+b,0)/svcs.length;
+    return`<div class="g-panel"><div class="g-panel-title">${pn}</div><div class="g-panel-svc">${svcs.join(' · ')}</div>${gaugeHTML(avg)}</div>`;
+  }).join('');
+
+  // Detail cards — only gauge + percentage, no duplicate meta
+  let detailSections='';
+  for(const pn of pN){
+    let cards='';
+    for(const sn of P[pn].services){
+      const a=(P[pn].av[sn]||[])[si]??100;
+      cards+=`<div class="svc-gauge-card">
+        <div class="sgc-label">${sIco(sn)} ${sn}</div>
+        ${cardGauge(a)}
+      </div>`;
+    }
+    detailSections+=`<div class="plat-sec"><div class="plat-hdr">${pn}</div><div class="svc-gauge-row">${cards}</div></div>`;
+  }
+
+  // Heatmap
+  let hm=`<div class="hm-l" style="font-weight:700;color:var(--t2);font-size:.6rem">PLATFORM</div>`;
+  D.weeks.forEach((wk,i)=>hm+=`<div class="hm-h" style="${i===si?'color:var(--blue);font-weight:800':''}">W${wk.num}</div>`);
+  pN.forEach(pn=>{
+    hm+=`<div class="hm-l">${pn}</div>`;
+    D.weeks.forEach((_,wi)=>{
+      const svcs=P[pn].services,avg=svcs.map(sn=>(P[pn].av[sn]||[])[wi]??100).reduce((a,b)=>a+b,0)/svcs.length;
+      const op=avg>=99.9?(wi===si?1:.45):.8;
+      const hmCls=avg>=99.9?'hm-cg':avg>=95?'hm-cy':avg>=80?'hm-co':'hm-cr';
+      hm+=`<div class="hm-c ${hmCls}${wi===si?' sel':''}" style="opacity:${wi===si?1:.55}" title="W${D.weeks[wi].num} ${pn}: ${avg.toFixed(2)}%"></div>`;
+    });
+  });
+
+  const isOk=avgA>=99.9;
+
+  document.getElementById('app').innerHTML=`
+    <div class="topbar fi fd1">
+      <div class="topbar-left"><div class="tb-icon">SA</div><span class="tb-title">Telecom NOC</span><span class="tb-sep">/</span><span class="tb-page">Service Availability</span></div>
+      <div class="topbar-right"><button class="auto-btn${autoOn?' on':''}" id="autoBtn"><span class="auto-ico">${autoOn?'⏸':'▶'}</span>${autoOn?'AUTO ON':'AUTO'}</button><div class="tb-pill"><span class="tb-dot"></span>OPERATIONAL</div><div class="tb-time">${fmtD(w.date)} — ${endD(w.date)}</div></div>
+    </div>
+    <div class="wk-bar fi fd2"><div class="wk-label">Week</div><button class="wk-arr" id="pW"${si===0?' disabled':''}>◀</button><div class="wk-track" id="wT">${chips}</div><button class="wk-arr" id="nW"${si>=nw-1?' disabled':''}>▶</button></div>
+    <div class="kpi-row fi fd3">
+      <div class="kpi"><div class="kpi-label">Overall Availability</div><div class="kpi-val kg">${avgA.toFixed(2)}%</div><div class="kpi-sub"><span class="kpi-tag">${isOk?'SLA MET':'SLA MISS'}</span> Target: 99.95%</div></div>
+      <div class="kpi"><div class="kpi-label">Total Downtime</div><div class="kpi-val kb">${tDt}h</div><div class="kpi-sub">of ${D.hours}h weekly window</div></div>
+      <div class="kpi"><div class="kpi-label">Monitored Endpoints</div><div class="kpi-val kc">${tSvc}</div><div class="kpi-sub">${pN.length} platforms active</div></div>
+      <div class="kpi"><div class="kpi-label">Perfect Uptime Streak</div><div class="kpi-val ky">${streak}</div><div class="kpi-sub">consecutive weeks at 100%</div></div>
+    </div>
+    <div class="g-row fi fd4">${gaugePanels}</div>
+    <div class="detail-panel fi fd5">
+      <div class="dp-head">
+        <div class="dp-title">Detailed Service Availability — Week ${w.num}</div>
+        <div class="dp-tag ${isOk?'dp-tag-g':'dp-tag-r'}">${isOk?'ALL SERVICES 100%':'DEGRADED'}</div>
+      </div>
+      <div class="dp-body">${detailSections}</div>
+    </div>
+    <div class="hm-panel fi fd6">
+      <div class="hm-head"><div class="hm-title">${nw}-Week Availability Heatmap</div><div class="dp-tag ${allA.every(v=>v>=99.9)?'dp-tag-g':'dp-tag-r'}">${allA.every(v=>v>=99.9)?'ALL GREEN':'INCIDENTS'}</div></div>
+      <div class="hm-body"><div class="hm-g" style="grid-template-columns:90px repeat(${nw},1fr)">${hm}</div></div>
+    </div>
+    <div class="foot"><div class="foot-t">Service Availability Dashboard · Data: Data.csv · ${fmtD(D.weeks[0]?.date)} – ${fmtD(D.weeks[nw-1]?.date)}</div></div>
+  `;
+
+  requestAnimationFrame(()=>{const ac=document.querySelector('.wk-c.act');if(ac)ac.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
+  document.querySelectorAll('.wk-c').forEach(c=>c.addEventListener('click',()=>{stopAuto();si=+c.dataset.i;render()}));
+  document.getElementById('pW').addEventListener('click',()=>{stopAuto();if(si>0){si--;render()}});
+  document.getElementById('nW').addEventListener('click',()=>{stopAuto();if(si<D.weeks.length-1){si++;render()}});
+  document.getElementById('autoBtn').addEventListener('click',()=>{if(autoOn)stopAuto();else startAuto();});
+}
+
+(async()=>{
+  try{D=await loadCSV();si=D.weeks.length-1;document.getElementById('loader').classList.add('hide');document.getElementById('app').style.display='block';render()}
+  catch(e){document.getElementById('loader').classList.add('hide');document.getElementById('errScr').classList.remove('hide');document.getElementById('errMsg').textContent='Could not load Data.csv: '+e.message}
+})();
+</script>
+</body>
+</html>

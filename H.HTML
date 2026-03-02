@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Availability Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg-base:#060a13;--bg-card:#111a2e;--bg-hover:#19263f;
+    --border:#1a2744;--border-bright:#253656;
+    --t1:#eef2f7;--t2:#8b9cc0;--t3:#556483;
+    --green:#00e68a;--green-dim:rgba(0,230,138,0.12);--green-glow:rgba(0,230,138,0.25);
+    --blue:#4d8bff;--blue-dim:rgba(77,139,255,0.12);
+    --cyan:#00cfcf;--cyan-dim:rgba(0,207,207,0.12);
+    --amber:#ffb340;
+    --red:#ff5c5c;--orange:#ff9830;--yellow:#f2cc0c;
+    --purple:#a78bfa;--purple-dim:rgba(167,139,250,0.10);
+    --r:14px;--r-sm:10px;--r-xs:6px;
+  }
+  html{font-size:14.5px}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg-base);color:var(--t1);min-height:100vh;overflow-x:hidden}
+  .bg-glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(100px)}
+  .bg-glow-1{top:-15%;left:-5%;width:500px;height:500px;background:rgba(0,230,138,0.03)}
+  .bg-glow-2{bottom:-10%;right:-5%;width:400px;height:400px;background:rgba(77,139,255,0.03)}
+  .app{position:relative;z-index:1;max-width:1460px;margin:0 auto;padding:24px 32px 52px}
+
+  .loading-screen{position:fixed;inset:0;z-index:999;background:var(--bg-base);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+  .loading-spinner{width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite}
+  .loading-text{font-size:0.85rem;color:var(--t3)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading-screen.hidden{display:none}
+  .error-screen{position:fixed;inset:0;z-index:999;background:var(--bg-base);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+  .error-screen.hidden{display:none}
+  .error-icon{font-size:2.5rem}.error-title{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:700;color:var(--red)}
+  .error-msg{font-size:0.88rem;color:var(--t2);max-width:500px;text-align:center;line-height:1.6}
+  .error-hint{font-size:0.78rem;color:var(--t3);background:var(--bg-card);padding:12px 20px;border-radius:var(--r-sm);border:1px solid var(--border);margin-top:6px}
+
+  .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+  .header-left{display:flex;align-items:center;gap:16px}
+  .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;color:#fff;box-shadow:0 0 28px rgba(0,230,138,0.18);flex-shrink:0}
+  .header-title{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-0.4px}
+  .header-sub{font-size:0.78rem;color:var(--t3);margin-top:1px;letter-spacing:0.3px}
+  .header-right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+  .live-pill{display:flex;align-items:center;gap:7px;background:var(--green-dim);border:1px solid rgba(0,230,138,0.2);padding:7px 14px;border-radius:100px;font-size:0.74rem;font-weight:700;color:var(--green);letter-spacing:0.5px;text-transform:uppercase}
+  .live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,230,138,0.4)}50%{box-shadow:0 0 0 7px rgba(0,230,138,0)}}
+  .header-date{font-size:0.78rem;color:var(--t3)}
+
+  .week-bar{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+  .week-bar-label{font-size:0.72rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.2px;white-space:nowrap}
+  .wk-btn{width:34px;height:34px;border-radius:var(--r-xs);background:var(--bg-card);border:1px solid var(--border);color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.95rem;transition:all 0.2s;flex-shrink:0}
+  .wk-btn:hover{background:var(--bg-hover);color:var(--t1);border-color:var(--border-bright)}
+  .wk-btn:disabled{opacity:0.3;cursor:default;pointer-events:none}
+  .week-track{display:flex;gap:5px;overflow-x:auto;flex:1;scrollbar-width:none;padding:2px 0}
+  .week-track::-webkit-scrollbar{display:none}
+  .wk-chip{padding:7px 15px;border-radius:100px;background:var(--bg-card);border:1px solid var(--border);color:var(--t3);font-size:0.74rem;font-weight:500;cursor:pointer;transition:all 0.25s;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px}
+  .wk-chip:hover{background:var(--bg-hover);color:var(--t2);border-color:var(--border-bright)}
+  .wk-chip.active{background:linear-gradient(135deg,rgba(0,230,138,0.13),rgba(0,207,207,0.08));border-color:rgba(0,230,138,0.4);color:var(--green);font-weight:700;box-shadow:0 0 18px rgba(0,230,138,0.06)}
+  .wk-chip-date{opacity:0.5;font-weight:400}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .s-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;position:relative;overflow:hidden;transition:all 0.3s}
+  .s-card:hover{border-color:var(--border-bright);transform:translateY(-1px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+  .s-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px}
+  .s-card:nth-child(1)::before{background:linear-gradient(90deg,var(--green),var(--cyan))}
+  .s-card:nth-child(2)::before{background:linear-gradient(90deg,var(--blue),var(--cyan))}
+  .s-card:nth-child(3)::before{background:linear-gradient(90deg,var(--cyan),var(--green))}
+  .s-card:nth-child(4)::before{background:linear-gradient(90deg,var(--amber),#fb923c)}
+  .s-label{font-size:0.7rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px}
+  .s-val{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px}
+  .s-val.c-green{color:var(--green)}.s-val.c-blue{color:var(--blue)}.s-val.c-cyan{color:var(--cyan)}.s-val.c-amber{color:var(--amber)}
+  .s-note{font-size:0.74rem;color:var(--t3);margin-top:5px;display:flex;align-items:center;gap:5px}
+  .s-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:100px;font-size:0.66rem;font-weight:700}
+  .s-badge.ok{background:var(--green-dim);color:var(--green)}
+
+  .panels{display:flex;flex-direction:column;gap:16px;margin-bottom:18px}
+  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;transition:border-color 0.3s}
+  .panel:hover{border-color:var(--border-bright)}
+  .p-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .p-title{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600}
+  .p-tag{font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:4px 10px;border-radius:100px;background:var(--green-dim);color:var(--green);border:1px solid rgba(0,230,138,0.13)}
+
+  /* === AGGREGATE GAUGE — full width, centered === */
+  .agg-gauge{display:flex;flex-direction:column;align-items:center;padding:24px 0 12px}
+  .agg-svg{width:320px;height:185px}
+  .agg-bg{fill:none;stroke:rgba(255,255,255,0.05);stroke-linecap:round}
+  .agg-fill{fill:none;stroke-linecap:round;transition:stroke-dashoffset 1.5s cubic-bezier(0.22,1,0.36,1)}
+  .agg-pct{font-family:'Outfit',sans-serif;font-weight:900;font-size:3rem;color:var(--t1);margin-top:-14px;letter-spacing:-2px}
+  .agg-label{font-size:0.82rem;color:var(--t3);font-weight:500;margin-top:2px}
+  .agg-sla{display:flex;gap:32px;margin-top:20px}
+  .sla-item{text-align:center}
+  .sla-val{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem}
+  .sla-label{font-size:0.68rem;color:var(--t3);margin-top:2px}
+
+  /* Donut */
+  .donut-wrap{display:flex;align-items:center;justify-content:center;gap:30px;padding:10px 0}
+  .donut-svg{width:150px;height:150px;transform:rotate(-90deg)}
+  .donut-bg{fill:none;stroke:rgba(255,255,255,0.04);stroke-width:14}
+  .donut-seg{fill:none;stroke-width:14;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+  .donut-legend{display:flex;flex-direction:column;gap:12px}
+  .donut-leg-item{display:flex;align-items:center;gap:9px}
+  .donut-leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+  .donut-leg-label{font-size:0.82rem;font-weight:500;color:var(--t2)}
+  .donut-leg-val{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.88rem;color:var(--t1);margin-left:auto}
+
+  /* === DETAIL GAUGES (green→cyan→blue gradient arc) === */
+  .detail-gauges{width:100%}
+  .dg-plat{border-top:1px solid rgba(255,255,255,0.03)}
+  .dg-plat:first-child{border-top:none}
+  .dg-plat-hdr{padding:14px 0 8px;font-family:'Outfit',sans-serif;font-weight:700;font-size:0.78rem;color:var(--t2);text-transform:uppercase;letter-spacing:0.7px}
+  .dg-row{display:flex;gap:14px;padding-bottom:16px;justify-content:center;flex-wrap:wrap}
+  .dg-item{
+    flex:1;min-width:200px;max-width:360px;
+    background:rgba(255,255,255,0.015);border:1px solid var(--border);border-radius:var(--r-sm);
+    padding:18px 16px 14px;display:flex;flex-direction:column;align-items:center;
+    transition:all 0.25s;position:relative;overflow:hidden;
+  }
+  .dg-item:hover{border-color:var(--border-bright);background:rgba(255,255,255,0.025)}
+  .dg-item::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--green),var(--cyan));opacity:0;transition:opacity 0.3s}
+  .dg-item:hover::after{opacity:1}
+  .dg-svc-label{display:flex;align-items:center;gap:8px;font-weight:600;font-size:0.88rem;margin-bottom:10px}
+  .dg-svc-icon{width:28px;height:28px;border-radius:var(--r-xs);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .dg-ic-data{background:var(--blue-dim);color:var(--blue)}
+  .dg-ic-sms{background:var(--cyan-dim);color:var(--cyan)}
+  .dg-ic-voice{background:var(--green-dim);color:var(--green)}
+  .dg-gauge{position:relative;width:160px;height:95px;margin:0 auto 6px}
+  .dg-gauge svg{width:100%;height:100%;overflow:visible}
+  .dg-gauge-val{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);font-family:'Outfit',sans-serif;font-weight:800;font-size:1.25rem}
+  .dg-gauge-sub{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);font-size:0.6rem;color:var(--t3);white-space:nowrap}
+  .dg-meta{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .dg-pct{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.92rem}
+  .dg-pct.pct-ok{color:var(--green)}.dg-pct.pct-warn{color:var(--amber)}.dg-pct.pct-bad{color:var(--red)}
+  .dg-dt{font-size:0.74rem;color:var(--t3)}
+  .dg-dot{width:8px;height:8px;border-radius:50%}
+  .dg-dot-g{background:var(--green);box-shadow:0 0 7px rgba(0,230,138,0.45)}
+  .dg-dot-r{background:var(--red);box-shadow:0 0 7px rgba(255,92,92,0.4)}
+
+  /* Platform Health rings */
+  .gauge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .gauge-cell{background:rgba(255,255,255,0.015);border:1px solid var(--border);border-radius:var(--r-sm);padding:18px 12px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+  .gauge-cell:hover{border-color:var(--border-bright);background:rgba(255,255,255,0.025)}
+  .gauge-cell::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--green),var(--cyan));opacity:0;transition:opacity 0.3s}
+  .gauge-cell:hover::after{opacity:1}
+  .gauge-cell-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.88rem;color:var(--t1);margin-bottom:2px}
+  .gauge-cell-svc{font-size:0.68rem;color:var(--t3);margin-bottom:12px}
+  .gauge-ring-wrap{position:relative;width:110px;height:110px;margin:0 auto 10px}
+  .gauge-ring-svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .gauge-ring-bg{fill:none;stroke:rgba(255,255,255,0.04);stroke-width:7}
+  .gauge-ring-fill{fill:none;stroke-width:7;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(0.22,1,0.36,1)}
+  .gauge-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge-ring-pct{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.45rem;color:var(--t1)}
+  .gauge-ring-sub{font-size:0.62rem;color:var(--t3);font-weight:500}
+  .gauge-cell-status{font-size:0.68rem;color:var(--green);font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px}
+  .dot-sm{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .dot-green{background:var(--green);box-shadow:0 0 6px rgba(0,230,138,0.5)}
+
+  /* Heatmap */
+  .heatmap{overflow-x:auto}
+  .hm-grid{display:grid;gap:3px;align-items:center}
+  .hm-label{font-size:0.68rem;font-weight:600;color:var(--t3);text-align:right;padding-right:8px;white-space:nowrap}
+  .hm-hdr{font-size:0.55rem;font-weight:700;color:var(--t3);text-align:center}
+  .hm-cell{aspect-ratio:1;border-radius:3px;min-height:12px;transition:all 0.2s;cursor:default}
+  .hm-up{background:var(--green);opacity:0.5}.hm-up:hover{opacity:0.9;box-shadow:0 0 8px rgba(0,230,138,0.4)}
+  .hm-up.hm-sel{opacity:1;box-shadow:0 0 8px rgba(0,230,138,0.5);outline:1.5px solid rgba(0,230,138,0.7)}
+  .hm-down{background:var(--red)}
+
+  .footer{text-align:center;padding-top:22px;border-top:1px solid var(--border);margin-top:8px}
+  .footer-txt{font-size:0.72rem;color:var(--t3)}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .ani{animation:fadeUp 0.45s ease-out both}
+  .d1{animation-delay:.03s}.d2{animation-delay:.07s}.d3{animation-delay:.11s}
+  .d4{animation-delay:.15s}.d5{animation-delay:.19s}.d6{animation-delay:.23s}
+  .d7{animation-delay:.27s}.d8{animation-delay:.31s}.d9{animation-delay:.35s}
+
+  @media(max-width:1100px){.stats{grid-template-columns:repeat(2,1fr)}.row-2{grid-template-columns:1fr}.gauge-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:700px){.app{padding:14px}.stats{grid-template-columns:1fr}.gauge-grid{grid-template-columns:1fr}.header{flex-direction:column;align-items:flex-start;gap:12px}.dg-row{flex-direction:column}.dg-item{max-width:100%}}
+</style>
+</head>
+<body>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+<div class="loading-screen" id="loadingScreen"><div class="loading-spinner"></div><div class="loading-text">Loading Data.csv …</div></div>
+<div class="error-screen hidden" id="errorScreen"><div class="error-icon">⚠️</div><div class="error-title">Failed to Load Data</div><div class="error-msg" id="errorMsg"></div><div class="error-hint">Ensure <strong>Data.csv</strong> is in the same folder as this HTML file.</div></div>
+<div class="app" id="app" style="display:none"></div>
+
+<script>
+async function loadCSV(){const r=await fetch('Data.csv');if(!r.ok)throw new Error(`HTTP ${r.status}`);return parseCSV(await r.text())}
+function parseCSV(raw){
+  const L=raw.split('\n').map(l=>l.replace(/^\uFEFF/,'').split(','));
+  const hours=parseInt(L[0][1])||168,wN=L[1].slice(1).map(Number),wD=L[2].slice(1);
+  const weeks=wN.map((n,i)=>({num:n,date:wD[i]||''})),nw=weeks.length;
+  const P={};let cp=null,sec='dt';
+  for(let i=3;i<L.length;i++){
+    const f=(L[i][0]||'').trim();
+    if(f.startsWith('SERVICE AVAILABILITY')){sec='av';cp=null;continue}
+    if(!f)continue;
+    if(!f.startsWith('•')&&!f.startsWith('\u2022')){cp=f;if(!P[cp])P[cp]={services:[],dt:{},av:{}};continue}
+    if(!cp)continue;
+    const sn=f.replace(/^[•·\u2022]\s*/,'').trim(),vals=L[i].slice(1,nw+1);
+    if(sec==='dt'){if(!P[cp].services.includes(sn))P[cp].services.push(sn);P[cp].dt[sn]=vals.map(v=>parseFloat(v)||0)}
+    else{P[cp].av[sn]=vals.map(v=>{const n=parseFloat((v||'').replace('%',''));return isNaN(n)?100:n})}
+  }
+  return{hours,weeks,platforms:P};
+}
+
+let DATA=null,selIdx=0;
+const Mo='Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+function fmt(d){if(!d)return'';const p=d.split('/');return Mo[+p[0]-1]+' '+p[1]+', '+p[2]}
+function endD(d){if(!d)return'';const p=d.split('/'),dt=new Date(+p[2],+p[0]-1,+p[1]);dt.setDate(dt.getDate()+6);return Mo[dt.getMonth()]+' '+dt.getDate()+', '+dt.getFullYear()}
+function sI(s){
+  const mk=(p,c)=>`<div class="dg-svc-icon ${c}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">${p}</svg></div>`;
+  if(s==='DATA')return mk('<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>','dg-ic-data');
+  if(s==='SMS')return mk('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>','dg-ic-sms');
+  if(s==='VOICE')return mk('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.88.37 1.85.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.96.33 1.93.57 2.81.7A2 2 0 0 1 22 16.92z"/>','dg-ic-voice');
+  return'';
+}
+function pC(v){return v>=99.9?'pct-ok':v>=95?'pct-warn':'pct-bad'}
+function gC(v){return v>=99.9?'var(--green)':v>=95?'var(--amber)':'var(--red)'}
+
+/* Detail gauge — green→cyan→blue gradient arc (same style as aggregate) */
+function makeGauge(pct, uid){
+  const cx=80,cy=72,r=56,toR=d=>d*(Math.PI/180),sweep=270;
+  function pt(deg){const a=toR(-225+deg);return{x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)}}
+  function arc(d1,d2){const p1=pt(d1),p2=pt(d2),lg=d2-d1>180?1:0;return`M${p1.x.toFixed(1)},${p1.y.toFixed(1)} A${r},${r} 0 ${lg} 1 ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`}
+  const bgArc=arc(0,sweep);
+  const fillEnd=Math.max((pct/100)*sweep,0.5);
+  const fillArc=arc(0,fillEnd);
+  const fc=pct>=95?'var(--green)':pct>=80?'var(--amber)':'var(--red)';
+  return`<div class="dg-gauge"><svg viewBox="0 0 160 88">
+    <defs><linearGradient id="dg_${uid}" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--green)"/><stop offset="50%" stop-color="var(--cyan)"/><stop offset="100%" stop-color="var(--blue)"/></linearGradient></defs>
+    <path d="${bgArc}" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10" stroke-linecap="round"/>
+    <path d="${fillArc}" fill="none" stroke="url(#dg_${uid})" stroke-width="10" stroke-linecap="round"/>
+  </svg>
+  <div class="dg-gauge-val" style="color:var(--t1)">${pct.toFixed(1)}%</div>
+  </div>`;
+}
+
+function render(){
+  const w=DATA.weeks[selIdx],P=DATA.platforms,pN=Object.keys(P),nw=DATA.weeks.length;
+  let allA=[],allDt=[],tSvc=0;
+  for(const pn of pN)for(const sn of P[pn].services){allA.push((P[pn].av[sn]||[])[selIdx]??100);allDt.push((P[pn].dt[sn]||[])[selIdx]??0);tSvc++}
+  const avgA=allA.length?allA.reduce((a,b)=>a+b,0)/allA.length:0,tDt=allDt.reduce((a,b)=>a+b,0);
+  let streak=0;for(let wi=selIdx;wi>=0;wi--){let ok=true;for(const pn of pN)for(const sn of P[pn].services)if(((P[pn].av[sn]||[])[wi]||0)<100)ok=false;if(ok)streak++;else break}
+
+  const chips=DATA.weeks.map((wk,i)=>`<div class="wk-chip ${i===selIdx?'active':''}" data-i="${i}">W${wk.num} <span class="wk-chip-date">${(wk.date||'').split('/').slice(0,2).join('/')}</span></div>`).join('');
+
+  // Aggregate gauge (full width, big, centered)
+  const mR=110,mC=Math.PI*mR,mOff=mC*(1-avgA/100);
+
+  // Detail gauge sections
+  let detailGauges='';
+  let gIdx=0;
+  for(const pn of pN){
+    let items='';
+    for(const sn of P[pn].services){
+      const a=(P[pn].av[sn]||[])[selIdx]??100,d=(P[pn].dt[sn]||[])[selIdx]??0;
+      items+=`<div class="dg-item">
+        <div class="dg-svc-label">${sI(sn)} ${sn}</div>
+        ${makeGauge(a,'g'+gIdx++)}
+        <div class="dg-meta">
+          <div class="dg-pct ${pC(a)}">${a.toFixed(2)}%</div>
+          <div class="dg-dt">${d}h down</div>
+          <span class="dg-dot ${a>=99.9?'dg-dot-g':'dg-dot-r'}"></span>
+        </div>
+      </div>`;
+    }
+    detailGauges+=`<div class="dg-plat"><div class="dg-plat-hdr">${pn}</div><div class="dg-row">${items}</div></div>`;
+  }
+
+  // Platform Health rings
+  const gCards=pN.map(pn=>{
+    const svcs=P[pn].services,avgs=svcs.map(sn=>(P[pn].av[sn]||[])[selIdx]??100);
+    const pa=avgs.reduce((a,b)=>a+b,0)/avgs.length,r=42,c=2*Math.PI*r,off=c*(1-pa/100),col=gC(pa);
+    return`<div class="gauge-cell"><div class="gauge-cell-name">${pn}</div><div class="gauge-cell-svc">${svcs.join(' · ')}</div><div class="gauge-ring-wrap"><svg class="gauge-ring-svg" viewBox="0 0 110 110"><defs><linearGradient id="gr_${pn.replace(/\W/g,'')}" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="${col}"/><stop offset="100%" stop-color="var(--cyan)"/></linearGradient></defs><circle cx="55" cy="55" r="${r}" class="gauge-ring-bg"/><circle cx="55" cy="55" r="${r}" class="gauge-ring-fill" stroke="url(#gr_${pn.replace(/\W/g,'')})" stroke-dasharray="${c}" stroke-dashoffset="${off}"/></svg><div class="gauge-ring-label"><div class="gauge-ring-pct">${pa.toFixed(1)}%</div><div class="gauge-ring-sub">UPTIME</div></div></div><div class="gauge-cell-status"><span class="dot-sm dot-green"></span> Operational</div></div>`;
+  }).join('');
+
+  // Donut
+  const svcT={};for(const pn of pN)for(const sn of P[pn].services)svcT[sn]=(svcT[sn]||0)+1;
+  const dCols={DATA:'var(--blue)',SMS:'var(--cyan)',VOICE:'var(--green)'};
+  const dTotal=Object.values(svcT).reduce((a,b)=>a+b,0);
+  const dR=55,dC=2*Math.PI*dR;
+  let dSegs='',dOff=0;const dKeys=Object.keys(svcT);
+  for(const k of dKeys){const frac=svcT[k]/dTotal,seg=frac*dC,gap=4;dSegs+=`<circle cx="75" cy="75" r="${dR}" class="donut-seg" stroke="${dCols[k]||'var(--purple)'}" stroke-dasharray="${seg-gap} ${dC-seg+gap}" stroke-dashoffset="${-dOff}"/>`;dOff+=seg}
+  const dLeg=dKeys.map(k=>`<div class="donut-leg-item"><div class="donut-leg-dot" style="background:${dCols[k]||'var(--purple)'}"></div><span class="donut-leg-label">${k}</span><span class="donut-leg-val">${svcT[k]} endpoints</span></div>`).join('');
+
+  // Heatmap
+  let hm=`<div class="hm-label" style="font-weight:700;color:var(--t2);font-size:0.64rem">PLATFORM</div>`;
+  DATA.weeks.forEach((wk,i)=>hm+=`<div class="hm-hdr" style="${i===selIdx?'color:var(--green);font-weight:800':''}">W${wk.num}</div>`);
+  pN.forEach(pn=>{
+    hm+=`<div class="hm-label">${pn}</div>`;
+    DATA.weeks.forEach((_,wi)=>{
+      const svcs=P[pn].services,avg=svcs.map(sn=>(P[pn].av[sn]||[])[wi]??100).reduce((a,b)=>a+b,0)/svcs.length;
+      hm+=`<div class="hm-cell ${avg>=99.9?'hm-up':'hm-down'} ${wi===selIdx?'hm-sel':''}" title="W${DATA.weeks[wi].num}: ${avg.toFixed(2)}%"></div>`;
+    });
+  });
+
+  document.getElementById('app').innerHTML=`
+    <div class="header ani d1"><div class="header-left"><div class="logo">SA</div><div><div class="header-title">Service Availability Dashboard</div><div class="header-sub">Telecom Infrastructure · Executive Overview</div></div></div><div class="header-right"><div class="live-pill"><span class="live-dot"></span> ALL SYSTEMS OPERATIONAL</div><div class="header-date">Week ${w.num} · ${fmt(w.date)} — ${endD(w.date)}</div></div></div>
+
+    <div class="week-bar ani d2"><div class="week-bar-label">Week</div><button class="wk-btn" id="prevW" ${selIdx===0?'disabled':''}>◀</button><div class="week-track" id="wkTrack">${chips}</div><button class="wk-btn" id="nextW" ${selIdx>=nw-1?'disabled':''}>▶</button></div>
+
+    <div class="stats ani d3">
+      <div class="s-card"><div class="s-label">Overall Availability</div><div class="s-val c-green">${avgA.toFixed(2)}%</div><div class="s-note"><span class="s-badge ok">✓ SLA Met</span> Target 99.95%</div></div>
+      <div class="s-card"><div class="s-label">Total Downtime</div><div class="s-val c-blue">${tDt}h</div><div class="s-note">of ${DATA.hours}h weekly hours</div></div>
+      <div class="s-card"><div class="s-label">Service Endpoints</div><div class="s-val c-cyan">${tSvc}</div><div class="s-note">across ${pN.length} platforms</div></div>
+      <div class="s-card"><div class="s-label">100% Uptime Streak</div><div class="s-val c-amber">${streak} wks</div><div class="s-note"><span class="s-badge ok">▲ Perfect Run</span></div></div>
+    </div>
+
+    <div class="panels">
+      <!-- AGGREGATE — FULL WIDTH, CENTERED -->
+      <div class="panel ani d4">
+        <div class="p-head"><div class="p-title">Aggregate Availability</div><div class="p-tag">Week ${w.num}</div></div>
+        <div class="agg-gauge">
+          <svg class="agg-svg" viewBox="0 0 320 185">
+            <defs><linearGradient id="aggGr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--green)"/><stop offset="50%" stop-color="var(--cyan)"/><stop offset="100%" stop-color="var(--blue)"/></linearGradient></defs>
+            <path d="M 40 165 A ${mR} ${mR} 0 0 1 280 165" class="agg-bg" stroke-width="18"/>
+            <path d="M 40 165 A ${mR} ${mR} 0 0 1 280 165" class="agg-fill" stroke="url(#aggGr)" stroke-width="18" stroke-dasharray="${mC}" stroke-dashoffset="${mOff}"/>
+          </svg>
+          <div class="agg-pct">${avgA.toFixed(1)}%</div>
+          <div class="agg-label">All Platforms & Services Combined</div>
+          <div class="agg-sla">
+            <div class="sla-item"><div class="sla-val" style="color:var(--green)">${DATA.hours}h</div><div class="sla-label">Total Hours</div></div>
+            <div class="sla-item"><div class="sla-val" style="color:var(--blue)">${tDt}h</div><div class="sla-label">Downtime</div></div>
+            <div class="sla-item"><div class="sla-val" style="color:var(--cyan)">${DATA.hours-tDt}h</div><div class="sla-label">Uptime</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAIL GAUGES — FULL WIDTH -->
+      <div class="panel ani d5"><div class="p-head"><div class="p-title">Detailed Service Availability — Week ${w.num}</div><div class="p-tag">${avgA>=99.9?'100% Uptime':'Degraded'}</div></div><div class="detail-gauges">${detailGauges}</div></div>
+
+      <!-- DONUT + PLATFORM HEALTH side by side -->
+      <div class="row-2">
+        <div class="panel ani d6"><div class="p-head"><div class="p-title">Service Endpoint Distribution</div><div class="p-tag">${dTotal} Total</div></div><div class="donut-wrap"><svg class="donut-svg" viewBox="0 0 150 150"><circle cx="75" cy="75" r="${dR}" class="donut-bg"/>${dSegs}</svg><div class="donut-legend">${dLeg}</div></div></div>
+        <div class="panel ani d7"><div class="p-head"><div class="p-title">Platform Health</div><div class="p-tag">${pN.length} Platforms</div></div><div class="gauge-grid">${gCards}</div></div>
+      </div>
+
+      <!-- HEATMAP -->
+      <div class="panel ani d8"><div class="p-head"><div class="p-title">${nw}-Week Uptime Heatmap</div><div class="p-tag">${allA.every(v=>v>=99.9)?'All Green':'Issues Detected'}</div></div><div class="heatmap"><div class="hm-grid" style="grid-template-columns:100px repeat(${nw},1fr)">${hm}</div></div></div>
+    </div>
+
+    <div class="footer"><div class="footer-txt">Service Availability Dashboard · Data loaded from Data.csv · ${fmt(DATA.weeks[0]?.date)} — ${fmt(DATA.weeks[nw-1]?.date)}</div></div>`;
+
+  requestAnimationFrame(()=>{const ac=document.querySelector('.wk-chip.active');if(ac)ac.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
+  document.querySelectorAll('.wk-chip').forEach(c=>c.addEventListener('click',()=>{selIdx=+c.dataset.i;render()}));
+  document.getElementById('prevW').addEventListener('click',()=>{if(selIdx>0){selIdx--;render()}});
+  document.getElementById('nextW').addEventListener('click',()=>{if(selIdx<DATA.weeks.length-1){selIdx++;render()}});
+}
+
+(async()=>{
+  try{DATA=await loadCSV();selIdx=DATA.weeks.length-1;document.getElementById('loadingScreen').classList.add('hidden');document.getElementById('app').style.display='block';render()}
+  catch(e){document.getElementById('loadingScreen').classList.add('hidden');document.getElementById('errorScreen').classList.remove('hidden');document.getElementById('errorMsg').textContent=`Could not load Data.csv: ${e.message}`}
+})();
+</script>
+</body>
+</html>
