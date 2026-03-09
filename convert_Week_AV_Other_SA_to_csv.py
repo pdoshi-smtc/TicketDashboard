@@ -1,6 +1,6 @@
 import pandas as pd
 
-file = "2025 SLA Report Spreadsheet.xlsx"
+file = "data/2025 SLA Report Spreadsheet.xlsx"
 sheet = "1. Week AV and Other SA"
 
 df = pd.read_excel(file, sheet_name=sheet, header=None)
@@ -13,6 +13,10 @@ dates = None
 for i, row in df.iterrows():
 
     first = str(row[0]).strip()
+
+    # stop processing when SERVICE AVAILABILITY % section starts
+    if "SERVICE AVAILABILITY %" in first:
+        break
 
     if "Week #" in first:
         weeks = list(row[1:])

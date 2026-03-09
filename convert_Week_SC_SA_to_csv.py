@@ -1,6 +1,6 @@
 import pandas as pd
 
-file = "2025 SLA Report Spreadsheet.xlsx"
+file = "data/2025 SLA Report Spreadsheet.xlsx"
 sheet = "1. Week SC SA"
 
 df = pd.read_excel(file, sheet_name=sheet, header=None)
@@ -14,6 +14,10 @@ current_offering = None
 for i, row in df.iterrows():
 
     first = str(row[0]).strip()
+
+    # stop processing when SERVICE AVAILABILITY % section starts
+    if "SERVICE AVAILABILITY %" in first:
+        break
 
     # capture week numbers
     if "Week #" in first:
@@ -53,7 +57,7 @@ for i, row in df.iterrows():
                     "Service": service,
                     "Week": int(weeks[col]),
                     "Date": pd.to_datetime(dates[col]),
-                    "Availability": round(availability,2)
+                    "Availability": round(availability, 2)
                 })
 
 result = pd.DataFrame(data)
