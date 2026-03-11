@@ -1,1020 +1,238 @@
 Service,Week,Date,Availability
-AirVantage Platform,1,2025-01-03,100.0
-AirVantage Platform,2,2025-01-10,100.0
-AirVantage Platform,3,2025-01-17,100.0
-AirVantage Platform,4,2025-01-24,100.0
-AirVantage Platform,5,2025-01-31,100.0
-AirVantage Platform,6,2025-02-07,100.0
-AirVantage Platform,7,2025-02-14,100.0
-AirVantage Platform,8,2025-02-21,100.0
-AirVantage Platform,9,2025-02-28,100.0
-AirVantage Platform,10,2025-03-07,100.0
-AirVantage Platform,11,2025-03-14,100.0
-AirVantage Platform,12,2025-03-21,94.42
-AirVantage Platform,13,2025-03-28,100.0
-AirVantage Platform,14,2025-04-04,100.0
-AirVantage Platform,15,2025-04-11,100.0
-AirVantage Platform,16,2025-04-18,100.0
-AirVantage Platform,17,2025-04-25,100.0
-AirVantage Platform,18,2025-05-02,100.0
-AirVantage Platform,19,2025-05-09,100.0
-AirVantage Platform,20,2025-05-16,100.0
-AirVantage Platform,21,2025-05-23,100.0
-AirVantage Platform,22,2025-05-30,100.0
-AirVantage Platform,23,2025-06-06,100.0
-AirVantage Platform,24,2025-06-13,100.0
-AirVantage Platform,25,2025-06-20,100.0
-AirVantage Platform,26,2025-06-27,100.0
-AirVantage Platform,27,2025-07-04,100.0
-AirVantage Platform,28,2025-07-11,100.0
-AirVantage Platform,29,2025-07-18,100.0
-AirVantage Platform,30,2025-07-25,100.0
-AirVantage Platform,31,2025-08-01,100.0
-AirVantage Platform,32,2025-08-08,100.0
-AirVantage Platform,33,2025-08-15,100.0
-AirVantage Platform,34,2025-08-22,100.0
-AirVantage Platform,35,2025-08-29,100.0
-AirVantage Platform,36,2025-09-05,100.0
-AirVantage Platform,37,2025-09-12,100.0
-AirVantage Platform,38,2025-09-19,100.0
-AirVantage Platform,39,2025-09-26,100.0
-AirVantage Platform,40,2025-10-03,100.0
-AirVantage Platform,41,2025-10-10,100.0
-AirVantage Platform,42,2025-10-17,100.0
-AirVantage Platform,43,2025-10-24,100.0
-AirVantage Platform,44,2025-10-31,100.0
-AirVantage Platform,45,2025-11-07,100.0
-AirVantage Platform,46,2025-11-14,100.0
-AirVantage Platform,47,2025-11-21,100.0
-AirVantage Platform,48,2025-11-28,100.0
-AirVantage Platform,49,2025-12-05,100.0
-AirVantage Platform,50,2025-12-12,100.0
-AirVantage Platform,51,2025-12-19,100.0
-AirVantage Platform,52,2025-12-26,100.0
-AirVantage Platform,1,2026-01-02,100.0
-AirVantage Platform,2,2026-01-09,100.0
-AirVantage Platform,3,2026-01-16,100.0
-AirVantage Platform,4,2026-01-23,100.0
-AirVantage Platform,5,2026-01-30,100.0
-AirVantage Platform,6,2026-02-06,100.0
-AirVantage Platform,7,2026-02-13,100.0
-AirVantage Platform,8,2026-02-20,100.0
-SIM and Connectivity Management,1,2025-01-03,100.0
-SIM and Connectivity Management,2,2025-01-10,100.0
-SIM and Connectivity Management,3,2025-01-17,100.0
-SIM and Connectivity Management,4,2025-01-24,100.0
-SIM and Connectivity Management,5,2025-01-31,100.0
-SIM and Connectivity Management,6,2025-02-07,100.0
-SIM and Connectivity Management,7,2025-02-14,100.0
-SIM and Connectivity Management,8,2025-02-21,100.0
-SIM and Connectivity Management,9,2025-02-28,100.0
-SIM and Connectivity Management,10,2025-03-07,100.0
-SIM and Connectivity Management,11,2025-03-14,100.0
-SIM and Connectivity Management,12,2025-03-21,100.0
-SIM and Connectivity Management,13,2025-03-28,100.0
-SIM and Connectivity Management,14,2025-04-04,100.0
-SIM and Connectivity Management,15,2025-04-11,100.0
-SIM and Connectivity Management,16,2025-04-18,100.0
-SIM and Connectivity Management,17,2025-04-25,100.0
-SIM and Connectivity Management,18,2025-05-02,100.0
-SIM and Connectivity Management,19,2025-05-09,100.0
-SIM and Connectivity Management,20,2025-05-16,100.0
-SIM and Connectivity Management,21,2025-05-23,100.0
-SIM and Connectivity Management,22,2025-05-30,100.0
-SIM and Connectivity Management,23,2025-06-06,100.0
-SIM and Connectivity Management,24,2025-06-13,100.0
-SIM and Connectivity Management,25,2025-06-20,100.0
-SIM and Connectivity Management,26,2025-06-27,100.0
-SIM and Connectivity Management,27,2025-07-04,100.0
-SIM and Connectivity Management,28,2025-07-11,100.0
-SIM and Connectivity Management,29,2025-07-18,100.0
-SIM and Connectivity Management,30,2025-07-25,100.0
-SIM and Connectivity Management,31,2025-08-01,100.0
-SIM and Connectivity Management,32,2025-08-08,100.0
-SIM and Connectivity Management,33,2025-08-15,100.0
-SIM and Connectivity Management,34,2025-08-22,100.0
-SIM and Connectivity Management,35,2025-08-29,100.0
-SIM and Connectivity Management,36,2025-09-05,100.0
-SIM and Connectivity Management,37,2025-09-12,100.0
-SIM and Connectivity Management,38,2025-09-19,100.0
-SIM and Connectivity Management,39,2025-09-26,100.0
-SIM and Connectivity Management,40,2025-10-03,100.0
-SIM and Connectivity Management,41,2025-10-10,100.0
-SIM and Connectivity Management,42,2025-10-17,100.0
-SIM and Connectivity Management,43,2025-10-24,100.0
-SIM and Connectivity Management,44,2025-10-31,100.0
-SIM and Connectivity Management,45,2025-11-07,100.0
-SIM and Connectivity Management,46,2025-11-14,100.0
-SIM and Connectivity Management,47,2025-11-21,100.0
-SIM and Connectivity Management,48,2025-11-28,100.0
-SIM and Connectivity Management,49,2025-12-05,100.0
-SIM and Connectivity Management,50,2025-12-12,100.0
-SIM and Connectivity Management,51,2025-12-19,100.0
-SIM and Connectivity Management,52,2025-12-26,100.0
-SIM and Connectivity Management,1,2026-01-02,100.0
-SIM and Connectivity Management,2,2026-01-09,100.0
-SIM and Connectivity Management,3,2026-01-16,100.0
-SIM and Connectivity Management,4,2026-01-23,100.0
-SIM and Connectivity Management,5,2026-01-30,100.0
-SIM and Connectivity Management,6,2026-02-06,100.0
-SIM and Connectivity Management,7,2026-02-13,100.0
-SIM and Connectivity Management,8,2026-02-20,100.0
-Device Management,1,2025-01-03,100.0
-Device Management,2,2025-01-10,100.0
-Device Management,3,2025-01-17,100.0
-Device Management,4,2025-01-24,100.0
-Device Management,5,2025-01-31,100.0
-Device Management,6,2025-02-07,100.0
-Device Management,7,2025-02-14,100.0
-Device Management,8,2025-02-21,100.0
-Device Management,9,2025-02-28,100.0
-Device Management,10,2025-03-07,100.0
-Device Management,11,2025-03-14,100.0
-Device Management,12,2025-03-21,94.42
-Device Management,13,2025-03-28,100.0
-Device Management,14,2025-04-04,100.0
-Device Management,15,2025-04-11,100.0
-Device Management,16,2025-04-18,100.0
-Device Management,17,2025-04-25,100.0
-Device Management,18,2025-05-02,100.0
-Device Management,19,2025-05-09,100.0
-Device Management,20,2025-05-16,100.0
-Device Management,21,2025-05-23,100.0
-Device Management,22,2025-05-30,100.0
-Device Management,23,2025-06-06,100.0
-Device Management,24,2025-06-13,100.0
-Device Management,25,2025-06-20,100.0
-Device Management,26,2025-06-27,100.0
-Device Management,27,2025-07-04,100.0
-Device Management,28,2025-07-11,100.0
-Device Management,29,2025-07-18,100.0
-Device Management,30,2025-07-25,100.0
-Device Management,31,2025-08-01,100.0
-Device Management,32,2025-08-08,100.0
-Device Management,33,2025-08-15,100.0
-Device Management,34,2025-08-22,100.0
-Device Management,35,2025-08-29,100.0
-Device Management,36,2025-09-05,100.0
-Device Management,37,2025-09-12,100.0
-Device Management,38,2025-09-19,100.0
-Device Management,39,2025-09-26,100.0
-Device Management,40,2025-10-03,100.0
-Device Management,41,2025-10-10,100.0
-Device Management,42,2025-10-17,100.0
-Device Management,43,2025-10-24,100.0
-Device Management,44,2025-10-31,100.0
-Device Management,45,2025-11-07,100.0
-Device Management,46,2025-11-14,100.0
-Device Management,47,2025-11-21,100.0
-Device Management,48,2025-11-28,100.0
-Device Management,49,2025-12-05,100.0
-Device Management,50,2025-12-12,100.0
-Device Management,51,2025-12-19,100.0
-Device Management,52,2025-12-26,100.0
-Device Management,1,2026-01-02,100.0
-Device Management,2,2026-01-09,100.0
-Device Management,3,2026-01-16,100.0
-Device Management,4,2026-01-23,100.0
-Device Management,5,2026-01-30,100.0
-Device Management,6,2026-02-06,100.0
-Device Management,7,2026-02-13,100.0
-Device Management,8,2026-02-20,100.0
-AirVantage UI / API,1,2025-01-03,100.0
-AirVantage UI / API,2,2025-01-10,100.0
-AirVantage UI / API,3,2025-01-17,100.0
-AirVantage UI / API,4,2025-01-24,100.0
-AirVantage UI / API,5,2025-01-31,100.0
-AirVantage UI / API,6,2025-02-07,100.0
-AirVantage UI / API,7,2025-02-14,100.0
-AirVantage UI / API,8,2025-02-21,100.0
-AirVantage UI / API,9,2025-02-28,100.0
-AirVantage UI / API,10,2025-03-07,100.0
-AirVantage UI / API,11,2025-03-14,100.0
-AirVantage UI / API,12,2025-03-21,100.0
-AirVantage UI / API,13,2025-03-28,100.0
-AirVantage UI / API,14,2025-04-04,100.0
-AirVantage UI / API,15,2025-04-11,100.0
-AirVantage UI / API,16,2025-04-18,100.0
-AirVantage UI / API,17,2025-04-25,100.0
-AirVantage UI / API,18,2025-05-02,100.0
-AirVantage UI / API,19,2025-05-09,100.0
-AirVantage UI / API,20,2025-05-16,100.0
-AirVantage UI / API,21,2025-05-23,100.0
-AirVantage UI / API,22,2025-05-30,100.0
-AirVantage UI / API,23,2025-06-06,100.0
-AirVantage UI / API,24,2025-06-13,100.0
-AirVantage UI / API,25,2025-06-20,100.0
-AirVantage UI / API,26,2025-06-27,100.0
-AirVantage UI / API,27,2025-07-04,100.0
-AirVantage UI / API,28,2025-07-11,100.0
-AirVantage UI / API,29,2025-07-18,100.0
-AirVantage UI / API,30,2025-07-25,100.0
-AirVantage UI / API,31,2025-08-01,100.0
-AirVantage UI / API,32,2025-08-08,100.0
-AirVantage UI / API,33,2025-08-15,100.0
-AirVantage UI / API,34,2025-08-22,100.0
-AirVantage UI / API,35,2025-08-29,100.0
-AirVantage UI / API,36,2025-09-05,100.0
-AirVantage UI / API,37,2025-09-12,100.0
-AirVantage UI / API,38,2025-09-19,100.0
-AirVantage UI / API,39,2025-09-26,100.0
-AirVantage UI / API,40,2025-10-03,100.0
-AirVantage UI / API,41,2025-10-10,100.0
-AirVantage UI / API,42,2025-10-17,100.0
-AirVantage UI / API,43,2025-10-24,100.0
-AirVantage UI / API,44,2025-10-31,100.0
-AirVantage UI / API,45,2025-11-07,100.0
-AirVantage UI / API,46,2025-11-14,100.0
-AirVantage UI / API,47,2025-11-21,100.0
-AirVantage UI / API,48,2025-11-28,100.0
-AirVantage UI / API,49,2025-12-05,100.0
-AirVantage UI / API,50,2025-12-12,100.0
-AirVantage UI / API,51,2025-12-19,100.0
-AirVantage UI / API,52,2025-12-26,100.0
-AirVantage UI / API,1,2026-01-02,100.0
-AirVantage UI / API,2,2026-01-09,100.0
-AirVantage UI / API,3,2026-01-16,100.0
-AirVantage UI / API,4,2026-01-23,100.0
-AirVantage UI / API,5,2026-01-30,100.0
-AirVantage UI / API,6,2026-02-06,100.0
-AirVantage UI / API,7,2026-02-13,100.0
-AirVantage UI / API,8,2026-02-20,100.0
-Cloud Connector Data Push,1,2025-01-03,100.0
-Cloud Connector Data Push,2,2025-01-10,100.0
-Cloud Connector Data Push,3,2025-01-17,100.0
-Cloud Connector Data Push,4,2025-01-24,100.0
-Cloud Connector Data Push,5,2025-01-31,100.0
-Cloud Connector Data Push,6,2025-02-07,100.0
-Cloud Connector Data Push,7,2025-02-14,100.0
-Cloud Connector Data Push,8,2025-02-21,100.0
-Cloud Connector Data Push,9,2025-02-28,100.0
-Cloud Connector Data Push,10,2025-03-07,100.0
-Cloud Connector Data Push,11,2025-03-14,100.0
-Cloud Connector Data Push,12,2025-03-21,100.0
-Cloud Connector Data Push,13,2025-03-28,100.0
-Cloud Connector Data Push,14,2025-04-04,100.0
-Cloud Connector Data Push,15,2025-04-11,100.0
-Cloud Connector Data Push,16,2025-04-18,100.0
-Cloud Connector Data Push,17,2025-04-25,100.0
-Cloud Connector Data Push,18,2025-05-02,100.0
-Cloud Connector Data Push,19,2025-05-09,100.0
-Cloud Connector Data Push,20,2025-05-16,100.0
-Cloud Connector Data Push,21,2025-05-23,100.0
-Cloud Connector Data Push,22,2025-05-30,100.0
-Cloud Connector Data Push,23,2025-06-06,100.0
-Cloud Connector Data Push,24,2025-06-13,100.0
-Cloud Connector Data Push,25,2025-06-20,100.0
-Cloud Connector Data Push,26,2025-06-27,100.0
-Cloud Connector Data Push,27,2025-07-04,100.0
-Cloud Connector Data Push,28,2025-07-11,100.0
-Cloud Connector Data Push,29,2025-07-18,100.0
-Cloud Connector Data Push,30,2025-07-25,100.0
-Cloud Connector Data Push,31,2025-08-01,100.0
-Cloud Connector Data Push,32,2025-08-08,100.0
-Cloud Connector Data Push,33,2025-08-15,100.0
-Cloud Connector Data Push,34,2025-08-22,100.0
-Cloud Connector Data Push,35,2025-08-29,100.0
-Cloud Connector Data Push,36,2025-09-05,100.0
-Cloud Connector Data Push,37,2025-09-12,100.0
-Cloud Connector Data Push,38,2025-09-19,100.0
-Cloud Connector Data Push,39,2025-09-26,100.0
-Cloud Connector Data Push,40,2025-10-03,100.0
-Cloud Connector Data Push,41,2025-10-10,100.0
-Cloud Connector Data Push,42,2025-10-17,100.0
-Cloud Connector Data Push,43,2025-10-24,100.0
-Cloud Connector Data Push,44,2025-10-31,100.0
-Cloud Connector Data Push,45,2025-11-07,100.0
-Cloud Connector Data Push,46,2025-11-14,100.0
-Cloud Connector Data Push,47,2025-11-21,100.0
-Cloud Connector Data Push,48,2025-11-28,100.0
-Cloud Connector Data Push,49,2025-12-05,100.0
-Cloud Connector Data Push,50,2025-12-12,100.0
-Cloud Connector Data Push,51,2025-12-19,100.0
-Cloud Connector Data Push,52,2025-12-26,100.0
-Cloud Connector Data Push,1,2026-01-02,100.0
-Cloud Connector Data Push,2,2026-01-09,100.0
-Cloud Connector Data Push,3,2026-01-16,100.0
-Cloud Connector Data Push,4,2026-01-23,100.0
-Cloud Connector Data Push,5,2026-01-30,100.0
-Cloud Connector Data Push,6,2026-02-06,100.0
-Cloud Connector Data Push,7,2026-02-13,100.0
-Cloud Connector Data Push,8,2026-02-20,100.0
-Smart Connectivity Overall (Weighted Avg),1,2025-01-03,100.0
-Smart Connectivity Overall (Weighted Avg),2,2025-01-10,100.0
-Smart Connectivity Overall (Weighted Avg),3,2025-01-17,100.0
-Smart Connectivity Overall (Weighted Avg),4,2025-01-24,100.0
-Smart Connectivity Overall (Weighted Avg),5,2025-01-31,100.0
-Smart Connectivity Overall (Weighted Avg),6,2025-02-07,100.0
-Smart Connectivity Overall (Weighted Avg),7,2025-02-14,100.0
-Smart Connectivity Overall (Weighted Avg),8,2025-02-21,100.0
-Smart Connectivity Overall (Weighted Avg),9,2025-02-28,100.0
-Smart Connectivity Overall (Weighted Avg),10,2025-03-07,100.0
-Smart Connectivity Overall (Weighted Avg),11,2025-03-14,100.0
-Smart Connectivity Overall (Weighted Avg),12,2025-03-21,100.0
-Smart Connectivity Overall (Weighted Avg),13,2025-03-28,100.0
-Smart Connectivity Overall (Weighted Avg),14,2025-04-04,100.0
-Smart Connectivity Overall (Weighted Avg),15,2025-04-11,100.0
-Smart Connectivity Overall (Weighted Avg),16,2025-04-18,100.0
-Smart Connectivity Overall (Weighted Avg),17,2025-04-25,100.0
-Smart Connectivity Overall (Weighted Avg),18,2025-05-02,100.0
-Smart Connectivity Overall (Weighted Avg),19,2025-05-09,100.0
-Smart Connectivity Overall (Weighted Avg),20,2025-05-16,100.0
-Smart Connectivity Overall (Weighted Avg),21,2025-05-23,100.0
-Smart Connectivity Overall (Weighted Avg),22,2025-05-30,100.0
-Smart Connectivity Overall (Weighted Avg),23,2025-06-06,100.0
-Smart Connectivity Overall (Weighted Avg),24,2025-06-13,100.0
-Smart Connectivity Overall (Weighted Avg),25,2025-06-20,100.0
-Smart Connectivity Overall (Weighted Avg),26,2025-06-27,100.0
-Smart Connectivity Overall (Weighted Avg),28,2025-07-11,100.0
-Smart Connectivity Overall (Weighted Avg),29,2025-07-18,100.0
-Smart Connectivity Overall (Weighted Avg),30,2025-07-25,100.0
-Smart Connectivity Overall (Weighted Avg),31,2025-08-01,100.0
-Smart Connectivity Overall (Weighted Avg),32,2025-08-08,100.0
-Smart Connectivity Overall (Weighted Avg),33,2025-08-15,100.0
-Smart Connectivity Overall (Weighted Avg),34,2025-08-22,100.0
-Smart Connectivity Overall (Weighted Avg),35,2025-08-29,100.0
-Smart Connectivity Overall (Weighted Avg),36,2025-09-05,100.0
-Smart Connectivity Overall (Weighted Avg),37,2025-09-12,100.0
-Smart Connectivity Overall (Weighted Avg),38,2025-09-19,100.0
-Smart Connectivity Overall (Weighted Avg),39,2025-09-26,100.0
-Smart Connectivity Overall (Weighted Avg),40,2025-10-03,100.0
-Smart Connectivity Overall (Weighted Avg),41,2025-10-10,100.0
-Smart Connectivity Overall (Weighted Avg),42,2025-10-17,100.0
-Smart Connectivity Overall (Weighted Avg),43,2025-10-24,100.0
-Smart Connectivity Overall (Weighted Avg),44,2025-10-31,100.0
-Smart Connectivity Overall (Weighted Avg),45,2025-11-07,100.0
-Smart Connectivity Overall (Weighted Avg),46,2025-11-14,100.0
-Smart Connectivity Overall (Weighted Avg),47,2025-11-21,100.0
-Smart Connectivity Overall (Weighted Avg),48,2025-11-28,100.0
-Smart Connectivity Overall (Weighted Avg),49,2025-12-05,100.0
-Smart Connectivity Overall (Weighted Avg),50,2025-12-12,100.0
-Smart Connectivity Overall (Weighted Avg),51,2025-12-19,100.0
-Smart Connectivity Overall (Weighted Avg),52,2025-12-26,100.0
-Smart Connectivity Overall (Weighted Avg),1,2026-01-02,100.0
-Smart Connectivity Overall (Weighted Avg),2,2026-01-09,100.0
-Smart Connectivity Overall (Weighted Avg),3,2026-01-16,100.0
-Smart Connectivity Overall (Weighted Avg),4,2026-01-23,100.0
-Smart Connectivity Overall (Weighted Avg),5,2026-01-30,100.0
-Smart Connectivity Overall (Weighted Avg),6,2026-02-06,100.0
-Smart Connectivity Overall (Weighted Avg),7,2026-02-13,100.0
-Smart Connectivity Overall (Weighted Avg),8,2026-02-20,100.0
-Advanced,1,2025-01-03,100.0
-Advanced,2,2025-01-10,100.0
-Advanced,3,2025-01-17,100.0
-Advanced,4,2025-01-24,100.0
-Advanced,5,2025-01-31,100.0
-Advanced,6,2025-02-07,100.0
-Advanced,7,2025-02-14,100.0
-Advanced,8,2025-02-21,100.0
-Advanced,9,2025-02-28,100.0
-Advanced,10,2025-03-07,100.0
-Advanced,11,2025-03-14,100.0
-Advanced,12,2025-03-21,100.0
-Advanced,13,2025-03-28,100.0
-Advanced,14,2025-04-04,100.0
-Advanced,15,2025-04-11,100.0
-Advanced,16,2025-04-18,100.0
-Advanced,17,2025-04-25,100.0
-Advanced,18,2025-05-02,100.0
-Advanced,19,2025-05-09,100.0
-Advanced,20,2025-05-16,100.0
-Advanced,21,2025-05-23,100.0
-Advanced,22,2025-05-30,100.0
-Advanced,23,2025-06-06,100.0
-Advanced,24,2025-06-13,100.0
-Advanced,25,2025-06-20,100.0
-Advanced,26,2025-06-27,100.0
-Advanced,27,2025-07-04,97.95
-Advanced,28,2025-07-11,100.0
-Advanced,29,2025-07-18,100.0
-Advanced,30,2025-07-25,100.0
-Advanced,31,2025-08-01,100.0
-Advanced,32,2025-08-08,100.0
-Advanced,33,2025-08-15,100.0
-Advanced,34,2025-08-22,100.0
-Advanced,35,2025-08-29,100.0
-Advanced,36,2025-09-05,100.0
-Advanced,37,2025-09-12,100.0
-Advanced,38,2025-09-19,100.0
-Advanced,39,2025-09-26,100.0
-Advanced,40,2025-10-03,100.0
-Advanced,41,2025-10-10,100.0
-Advanced,42,2025-10-17,100.0
-Advanced,43,2025-10-24,100.0
-Advanced,44,2025-10-31,100.0
-Advanced,45,2025-11-07,100.0
-Advanced,46,2025-11-14,100.0
-Advanced,47,2025-11-21,100.0
-Advanced,48,2025-11-28,100.0
-Advanced,49,2025-12-05,100.0
-Advanced,50,2025-12-12,100.0
-Advanced,51,2025-12-19,100.0
-Advanced,52,2025-12-26,100.0
-Advanced,1,2026-01-02,100.0
-Advanced,2,2026-01-09,100.0
-Advanced,3,2026-01-16,100.0
-Advanced,4,2026-01-23,100.0
-Advanced,5,2026-01-30,100.0
-Advanced,6,2026-02-06,100.0
-Advanced,7,2026-02-13,100.0
-Advanced,8,2026-02-20,100.0
-Essentials1 (Sparkle),1,2025-01-03,100.0
-Essentials1 (Sparkle),2,2025-01-10,100.0
-Essentials1 (Sparkle),3,2025-01-17,100.0
-Essentials1 (Sparkle),4,2025-01-24,100.0
-Essentials1 (Sparkle),5,2025-01-31,100.0
-Essentials1 (Sparkle),6,2025-02-07,100.0
-Essentials1 (Sparkle),7,2025-02-14,100.0
-Essentials1 (Sparkle),8,2025-02-21,100.0
-Essentials1 (Sparkle),9,2025-02-28,100.0
-Essentials1 (Sparkle),10,2025-03-07,100.0
-Essentials1 (Sparkle),11,2025-03-14,100.0
-Essentials1 (Sparkle),12,2025-03-21,100.0
-Essentials1 (Sparkle),13,2025-03-28,100.0
-Essentials1 (Sparkle),14,2025-04-04,100.0
-Essentials1 (Sparkle),15,2025-04-11,100.0
-Essentials1 (Sparkle),16,2025-04-18,100.0
-Essentials1 (Sparkle),17,2025-04-25,100.0
-Essentials1 (Sparkle),18,2025-05-02,100.0
-Essentials1 (Sparkle),19,2025-05-09,100.0
-Essentials1 (Sparkle),20,2025-05-16,100.0
-Essentials1 (Sparkle),21,2025-05-23,100.0
-Essentials1 (Sparkle),22,2025-05-30,100.0
-Essentials1 (Sparkle),23,2025-06-06,100.0
-Essentials1 (Sparkle),24,2025-06-13,97.04
-Essentials1 (Sparkle),25,2025-06-20,100.0
-Essentials1 (Sparkle),26,2025-06-27,100.0
-Essentials1 (Sparkle),27,2025-07-04,97.95
-Essentials1 (Sparkle),28,2025-07-11,100.0
-Essentials1 (Sparkle),29,2025-07-18,100.0
-Essentials1 (Sparkle),30,2025-07-25,100.0
-Essentials1 (Sparkle),31,2025-08-01,100.0
-Essentials1 (Sparkle),32,2025-08-08,100.0
-Essentials1 (Sparkle),33,2025-08-15,100.0
-Essentials1 (Sparkle),34,2025-08-22,100.0
-Essentials1 (Sparkle),35,2025-08-29,100.0
-Essentials1 (Sparkle),36,2025-09-05,100.0
-Essentials1 (Sparkle),37,2025-09-12,100.0
-Essentials1 (Sparkle),38,2025-09-19,100.0
-Essentials1 (Sparkle),39,2025-09-26,100.0
-Essentials1 (Sparkle),40,2025-10-03,100.0
-Essentials1 (Sparkle),41,2025-10-10,100.0
-Essentials1 (Sparkle),42,2025-10-17,100.0
-Essentials1 (Sparkle),43,2025-10-24,100.0
-Essentials1 (Sparkle),44,2025-10-31,100.0
-Essentials1 (Sparkle),45,2025-11-07,100.0
-Essentials1 (Sparkle),46,2025-11-14,100.0
-Essentials1 (Sparkle),47,2025-11-21,100.0
-Essentials1 (Sparkle),48,2025-11-28,100.0
-Essentials1 (Sparkle),49,2025-12-05,100.0
-Essentials1 (Sparkle),50,2025-12-12,100.0
-Essentials1 (Sparkle),51,2025-12-19,100.0
-Essentials1 (Sparkle),52,2025-12-26,100.0
-Essentials1 (Sparkle),1,2026-01-02,100.0
-Essentials1 (Sparkle),2,2026-01-09,100.0
-Essentials1 (Sparkle),3,2026-01-16,100.0
-Essentials1 (Sparkle),4,2026-01-23,100.0
-Essentials1 (Sparkle),5,2026-01-30,100.0
-Essentials1 (Sparkle),6,2026-02-06,100.0
-Essentials1 (Sparkle),7,2026-02-13,100.0
-Essentials1 (Sparkle),8,2026-02-20,100.0
-Essentials2 (BICS),1,2025-01-03,100.0
-Essentials2 (BICS),2,2025-01-10,100.0
-Essentials2 (BICS),3,2025-01-17,100.0
-Essentials2 (BICS),4,2025-01-24,100.0
-Essentials2 (BICS),5,2025-01-31,100.0
-Essentials2 (BICS),6,2025-02-07,100.0
-Essentials2 (BICS),7,2025-02-14,100.0
-Essentials2 (BICS),8,2025-02-21,100.0
-Essentials2 (BICS),9,2025-02-28,100.0
-Essentials2 (BICS),10,2025-03-07,100.0
-Essentials2 (BICS),11,2025-03-14,100.0
-Essentials2 (BICS),12,2025-03-21,100.0
-Essentials2 (BICS),13,2025-03-28,100.0
-Essentials2 (BICS),14,2025-04-04,100.0
-Essentials2 (BICS),15,2025-04-11,100.0
-Essentials2 (BICS),16,2025-04-18,100.0
-Essentials2 (BICS),17,2025-04-25,100.0
-Essentials2 (BICS),18,2025-05-02,100.0
-Essentials2 (BICS),19,2025-05-09,100.0
-Essentials2 (BICS),20,2025-05-16,100.0
-Essentials2 (BICS),21,2025-05-23,100.0
-Essentials2 (BICS),22,2025-05-30,100.0
-Essentials2 (BICS),23,2025-06-06,100.0
-Essentials2 (BICS),24,2025-06-13,100.0
-Essentials2 (BICS),25,2025-06-20,100.0
-Essentials2 (BICS),26,2025-06-27,100.0
-Essentials2 (BICS),27,2025-07-04,97.95
-Essentials2 (BICS),28,2025-07-11,100.0
-Essentials2 (BICS),29,2025-07-18,100.0
-Essentials2 (BICS),30,2025-07-25,100.0
-Essentials2 (BICS),31,2025-08-01,100.0
-Essentials2 (BICS),32,2025-08-08,100.0
-Essentials2 (BICS),33,2025-08-15,100.0
-Essentials2 (BICS),34,2025-08-22,100.0
-Essentials2 (BICS),35,2025-08-29,100.0
-Essentials2 (BICS),36,2025-09-05,100.0
-Essentials2 (BICS),37,2025-09-12,100.0
-Essentials2 (BICS),38,2025-09-19,100.0
-Essentials2 (BICS),39,2025-09-26,100.0
-Essentials2 (BICS),40,2025-10-03,100.0
-Essentials2 (BICS),41,2025-10-10,100.0
-Essentials2 (BICS),42,2025-10-17,100.0
-Essentials2 (BICS),43,2025-10-24,100.0
-Essentials2 (BICS),44,2025-10-31,100.0
-Essentials2 (BICS),45,2025-11-07,100.0
-Essentials2 (BICS),46,2025-11-14,100.0
-Essentials2 (BICS),47,2025-11-21,100.0
-Essentials2 (BICS),48,2025-11-28,100.0
-Essentials2 (BICS),49,2025-12-05,100.0
-Essentials2 (BICS),50,2025-12-12,100.0
-Essentials2 (BICS),51,2025-12-19,100.0
-Essentials2 (BICS),52,2025-12-26,100.0
-Essentials2 (BICS),1,2026-01-02,100.0
-Essentials2 (BICS),2,2026-01-09,100.0
-Essentials2 (BICS),3,2026-01-16,100.0
-Essentials2 (BICS),4,2026-01-23,100.0
-Essentials2 (BICS),5,2026-01-30,100.0
-Essentials2 (BICS),6,2026-02-06,100.0
-Essentials2 (BICS),7,2026-02-13,100.0
-Essentials2 (BICS),8,2026-02-20,100.0
-Essentials3 (JT - Velos IoT),1,2025-01-03,100.0
-Essentials3 (JT - Velos IoT),2,2025-01-10,100.0
-Essentials3 (JT - Velos IoT),3,2025-01-17,100.0
-Essentials3 (JT - Velos IoT),4,2025-01-24,100.0
-Essentials3 (JT - Velos IoT),5,2025-01-31,100.0
-Essentials3 (JT - Velos IoT),6,2025-02-07,100.0
-Essentials3 (JT - Velos IoT),7,2025-02-14,100.0
-Essentials3 (JT - Velos IoT),8,2025-02-21,100.0
-Essentials3 (JT - Velos IoT),9,2025-02-28,100.0
-Essentials3 (JT - Velos IoT),10,2025-03-07,100.0
-Essentials3 (JT - Velos IoT),11,2025-03-14,100.0
-Essentials3 (JT - Velos IoT),12,2025-03-21,100.0
-Essentials3 (JT - Velos IoT),13,2025-03-28,100.0
-Essentials3 (JT - Velos IoT),14,2025-04-04,100.0
-Essentials3 (JT - Velos IoT),15,2025-04-11,100.0
-Essentials3 (JT - Velos IoT),16,2025-04-18,100.0
-Essentials3 (JT - Velos IoT),17,2025-04-25,100.0
-Essentials3 (JT - Velos IoT),18,2025-05-02,100.0
-Essentials3 (JT - Velos IoT),19,2025-05-09,100.0
-Essentials3 (JT - Velos IoT),20,2025-05-16,100.0
-Essentials3 (JT - Velos IoT),21,2025-05-23,100.0
-Essentials3 (JT - Velos IoT),22,2025-05-30,100.0
-Essentials3 (JT - Velos IoT),23,2025-06-06,100.0
-Essentials3 (JT - Velos IoT),24,2025-06-13,100.0
-Essentials3 (JT - Velos IoT),25,2025-06-20,100.0
-Essentials3 (JT - Velos IoT),26,2025-06-27,100.0
-Essentials3 (JT - Velos IoT),27,2025-07-04,97.95
-Essentials3 (JT - Velos IoT),28,2025-07-11,100.0
-Essentials3 (JT - Velos IoT),29,2025-07-18,100.0
-Essentials3 (JT - Velos IoT),30,2025-07-25,100.0
-Essentials3 (JT - Velos IoT),31,2025-08-01,100.0
-Essentials3 (JT - Velos IoT),32,2025-08-08,100.0
-Essentials3 (JT - Velos IoT),33,2025-08-15,100.0
-Essentials3 (JT - Velos IoT),34,2025-08-22,100.0
-Essentials3 (JT - Velos IoT),35,2025-08-29,100.0
-Essentials3 (JT - Velos IoT),36,2025-09-05,100.0
-Essentials3 (JT - Velos IoT),37,2025-09-12,100.0
-Essentials3 (JT - Velos IoT),38,2025-09-19,100.0
-Essentials3 (JT - Velos IoT),39,2025-09-26,100.0
-Essentials3 (JT - Velos IoT),40,2025-10-03,100.0
-Essentials3 (JT - Velos IoT),41,2025-10-10,100.0
-Essentials3 (JT - Velos IoT),42,2025-10-17,100.0
-Essentials3 (JT - Velos IoT),43,2025-10-24,100.0
-Essentials3 (JT - Velos IoT),44,2025-10-31,100.0
-Essentials3 (JT - Velos IoT),45,2025-11-07,100.0
-Essentials3 (JT - Velos IoT),46,2025-11-14,100.0
-Essentials3 (JT - Velos IoT),47,2025-11-21,100.0
-Essentials3 (JT - Velos IoT),48,2025-11-28,100.0
-Essentials3 (JT - Velos IoT),49,2025-12-05,100.0
-Essentials3 (JT - Velos IoT),50,2025-12-12,100.0
-Essentials3 (JT - Velos IoT),51,2025-12-19,100.0
-Essentials3 (JT - Velos IoT),52,2025-12-26,100.0
-Essentials3 (JT - Velos IoT),1,2026-01-02,100.0
-Essentials3 (JT - Velos IoT),2,2026-01-09,100.0
-Essentials3 (JT - Velos IoT),3,2026-01-16,100.0
-Essentials3 (JT - Velos IoT),4,2026-01-23,100.0
-Essentials3 (JT - Velos IoT),5,2026-01-30,100.0
-Essentials3 (JT - Velos IoT),6,2026-02-06,100.0
-Essentials3 (JT - Velos IoT),7,2026-02-13,100.0
-Essentials3 (JT - Velos IoT),8,2026-02-20,100.0
-Essentials4,1,2025-01-03,100.0
-Essentials4,2,2025-01-10,100.0
-Essentials4,3,2025-01-17,100.0
-Essentials4,4,2025-01-24,100.0
-Essentials4,5,2025-01-31,100.0
-Essentials4,6,2025-02-07,100.0
-Essentials4,7,2025-02-14,100.0
-Essentials4,8,2025-02-21,100.0
-Essentials4,9,2025-02-28,100.0
-Essentials4,10,2025-03-07,100.0
-Essentials4,11,2025-03-14,100.0
-Essentials4,12,2025-03-21,100.0
-Essentials4,13,2025-03-28,100.0
-Essentials4,14,2025-04-04,100.0
-Essentials4,15,2025-04-11,100.0
-Essentials4,16,2025-04-18,100.0
-Essentials4,17,2025-04-25,100.0
-Essentials4,18,2025-05-02,100.0
-Essentials4,19,2025-05-09,100.0
-Essentials4,20,2025-05-16,100.0
-Essentials4,21,2025-05-23,100.0
-Essentials4,22,2025-05-30,100.0
-Essentials4,23,2025-06-06,100.0
-Essentials4,24,2025-06-13,100.0
-Essentials4,25,2025-06-20,100.0
-Essentials4,26,2025-06-27,100.0
-Essentials4,27,2025-07-04,97.95
-Essentials4,28,2025-07-11,100.0
-Essentials4,29,2025-07-18,100.0
-Essentials4,30,2025-07-25,100.0
-Essentials4,31,2025-08-01,100.0
-Essentials4,32,2025-08-08,100.0
-Essentials4,33,2025-08-15,100.0
-Essentials4,34,2025-08-22,100.0
-Essentials4,35,2025-08-29,100.0
-Essentials4,36,2025-09-05,100.0
-Essentials4,37,2025-09-12,100.0
-Essentials4,38,2025-09-19,100.0
-Essentials4,39,2025-09-26,100.0
-Essentials4,40,2025-10-03,100.0
-Essentials4,41,2025-10-10,100.0
-Essentials4,42,2025-10-17,100.0
-Essentials4,43,2025-10-24,100.0
-Essentials4,44,2025-10-31,100.0
-Essentials4,45,2025-11-07,100.0
-Essentials4,46,2025-11-14,100.0
-Essentials4,47,2025-11-21,100.0
-Essentials4,48,2025-11-28,100.0
-Essentials4,49,2025-12-05,100.0
-Essentials4,50,2025-12-12,100.0
-Essentials4,51,2025-12-19,100.0
-Essentials4,52,2025-12-26,100.0
-Essentials4,1,2026-01-02,100.0
-Essentials4,2,2026-01-09,100.0
-Essentials4,3,2026-01-16,100.0
-Essentials4,4,2026-01-23,100.0
-Essentials4,5,2026-01-30,100.0
-Essentials4,6,2026-02-06,100.0
-Essentials4,7,2026-02-13,100.0
-Essentials4,8,2026-02-20,100.0
-Essentials5 (Orange 901),1,2025-01-03,100.0
-Essentials5 (Orange 901),2,2025-01-10,100.0
-Essentials5 (Orange 901),3,2025-01-17,100.0
-Essentials5 (Orange 901),4,2025-01-24,100.0
-Essentials5 (Orange 901),5,2025-01-31,100.0
-Essentials5 (Orange 901),6,2025-02-07,100.0
-Essentials5 (Orange 901),7,2025-02-14,100.0
-Essentials5 (Orange 901),8,2025-02-21,100.0
-Essentials5 (Orange 901),9,2025-02-28,100.0
-Essentials5 (Orange 901),10,2025-03-07,100.0
-Essentials5 (Orange 901),11,2025-03-14,100.0
-Essentials5 (Orange 901),12,2025-03-21,100.0
-Essentials5 (Orange 901),13,2025-03-28,100.0
-Essentials5 (Orange 901),14,2025-04-04,100.0
-Essentials5 (Orange 901),15,2025-04-11,100.0
-Essentials5 (Orange 901),16,2025-04-18,100.0
-Essentials5 (Orange 901),17,2025-04-25,100.0
-Essentials5 (Orange 901),18,2025-05-02,100.0
-Essentials5 (Orange 901),19,2025-05-09,100.0
-Essentials5 (Orange 901),20,2025-05-16,100.0
-Essentials5 (Orange 901),21,2025-05-23,100.0
-Essentials5 (Orange 901),22,2025-05-30,100.0
-Essentials5 (Orange 901),23,2025-06-06,100.0
-Essentials5 (Orange 901),24,2025-06-13,99.21
-Essentials5 (Orange 901),25,2025-06-20,100.0
-Essentials5 (Orange 901),26,2025-06-27,99.4
-Essentials5 (Orange 901),27,2025-07-04,97.95
-Essentials5 (Orange 901),28,2025-07-11,100.0
-Essentials5 (Orange 901),29,2025-07-18,100.0
-Essentials5 (Orange 901),30,2025-07-25,100.0
-Essentials5 (Orange 901),31,2025-08-01,100.0
-Essentials5 (Orange 901),32,2025-08-08,100.0
-Essentials5 (Orange 901),33,2025-08-15,100.0
-Essentials5 (Orange 901),34,2025-08-22,100.0
-Essentials5 (Orange 901),35,2025-08-29,100.0
-Essentials5 (Orange 901),36,2025-09-05,100.0
-Essentials5 (Orange 901),37,2025-09-12,100.0
-Essentials5 (Orange 901),38,2025-09-19,100.0
-Essentials5 (Orange 901),39,2025-09-26,100.0
-Essentials5 (Orange 901),40,2025-10-03,100.0
-Essentials5 (Orange 901),41,2025-10-10,100.0
-Essentials5 (Orange 901),42,2025-10-17,100.0
-Essentials5 (Orange 901),43,2025-10-24,100.0
-Essentials5 (Orange 901),44,2025-10-31,100.0
-Essentials5 (Orange 901),45,2025-11-07,100.0
-Essentials5 (Orange 901),46,2025-11-14,100.0
-Essentials5 (Orange 901),47,2025-11-21,100.0
-Essentials5 (Orange 901),48,2025-11-28,100.0
-Essentials5 (Orange 901),49,2025-12-05,100.0
-Essentials5 (Orange 901),50,2025-12-12,100.0
-Essentials5 (Orange 901),51,2025-12-19,100.0
-Essentials5 (Orange 901),52,2025-12-26,100.0
-Essentials5 (Orange 901),1,2026-01-02,100.0
-Essentials5 (Orange 901),2,2026-01-09,100.0
-Essentials5 (Orange 901),3,2026-01-16,100.0
-Essentials5 (Orange 901),4,2026-01-23,100.0
-Essentials5 (Orange 901),5,2026-01-30,100.0
-Essentials5 (Orange 901),6,2026-02-06,100.0
-Essentials5 (Orange 901),7,2026-02-13,100.0
-Essentials5 (Orange 901),8,2026-02-20,100.0
-Carrier+ NAM,1,2025-01-03,100.0
-Carrier+ NAM,2,2025-01-10,100.0
-Carrier+ NAM,3,2025-01-17,100.0
-Carrier+ NAM,4,2025-01-24,100.0
-Carrier+ NAM,5,2025-01-31,100.0
-Carrier+ NAM,6,2025-02-07,100.0
-Carrier+ NAM,7,2025-02-14,100.0
-Carrier+ NAM,8,2025-02-21,100.0
-Carrier+ NAM,9,2025-02-28,100.0
-Carrier+ NAM,10,2025-03-07,100.0
-Carrier+ NAM,11,2025-03-14,100.0
-Carrier+ NAM,12,2025-03-21,100.0
-Carrier+ NAM,13,2025-03-28,100.0
-Carrier+ NAM,14,2025-04-04,100.0
-Carrier+ NAM,15,2025-04-11,100.0
-Carrier+ NAM,16,2025-04-18,100.0
-Carrier+ NAM,17,2025-04-25,100.0
-Carrier+ NAM,18,2025-05-02,100.0
-Carrier+ NAM,19,2025-05-09,100.0
-Carrier+ NAM,20,2025-05-16,100.0
-Carrier+ NAM,21,2025-05-23,100.0
-Carrier+ NAM,22,2025-05-30,100.0
-Carrier+ NAM,23,2025-06-06,100.0
-Carrier+ NAM,24,2025-06-13,100.0
-Carrier+ NAM,25,2025-06-20,100.0
-Carrier+ NAM,26,2025-06-27,100.0
-Carrier+ NAM,27,2025-07-04,100.0
-Carrier+ NAM,28,2025-07-11,100.0
-Carrier+ NAM,29,2025-07-18,100.0
-Carrier+ NAM,30,2025-07-25,100.0
-Carrier+ NAM,31,2025-08-01,100.0
-Carrier+ NAM,32,2025-08-08,100.0
-Carrier+ NAM,33,2025-08-15,100.0
-Carrier+ NAM,34,2025-08-22,100.0
-Carrier+ NAM,35,2025-08-29,100.0
-Carrier+ NAM,36,2025-09-05,100.0
-Carrier+ NAM,37,2025-09-12,100.0
-Carrier+ NAM,38,2025-09-19,100.0
-Carrier+ NAM,39,2025-09-26,100.0
-Carrier+ NAM,40,2025-10-03,100.0
-Carrier+ NAM,41,2025-10-10,100.0
-Carrier+ NAM,42,2025-10-17,100.0
-Carrier+ NAM,43,2025-10-24,100.0
-Carrier+ NAM,44,2025-10-31,100.0
-Carrier+ NAM,45,2025-11-07,100.0
-Carrier+ NAM,46,2025-11-14,100.0
-Carrier+ NAM,47,2025-11-21,100.0
-Carrier+ NAM,48,2025-11-28,100.0
-Carrier+ NAM,49,2025-12-05,100.0
-Carrier+ NAM,50,2025-12-12,100.0
-Carrier+ NAM,51,2025-12-19,100.0
-Carrier+ NAM,52,2025-12-26,100.0
-Carrier+ NAM,1,2026-01-02,100.0
-Carrier+ NAM,2,2026-01-09,100.0
-Carrier+ NAM,3,2026-01-16,100.0
-Carrier+ NAM,4,2026-01-23,100.0
-Carrier+ NAM,5,2026-01-30,100.0
-Carrier+ NAM,6,2026-02-06,100.0
-Carrier+ NAM,7,2026-02-13,98.33
-Carrier+ NAM,8,2026-02-20,100.0
-Carrier+ EMEA,1,2025-01-03,100.0
-Carrier+ EMEA,2,2025-01-10,100.0
-Carrier+ EMEA,3,2025-01-17,100.0
-Carrier+ EMEA,4,2025-01-24,100.0
-Carrier+ EMEA,5,2025-01-31,100.0
-Carrier+ EMEA,6,2025-02-07,100.0
-Carrier+ EMEA,7,2025-02-14,100.0
-Carrier+ EMEA,8,2025-02-21,100.0
-Carrier+ EMEA,9,2025-02-28,100.0
-Carrier+ EMEA,10,2025-03-07,100.0
-Carrier+ EMEA,11,2025-03-14,100.0
-Carrier+ EMEA,12,2025-03-21,100.0
-Carrier+ EMEA,13,2025-03-28,100.0
-Carrier+ EMEA,14,2025-04-04,100.0
-Carrier+ EMEA,15,2025-04-11,100.0
-Carrier+ EMEA,16,2025-04-18,100.0
-Carrier+ EMEA,17,2025-04-25,100.0
-Carrier+ EMEA,18,2025-05-02,100.0
-Carrier+ EMEA,19,2025-05-09,100.0
-Carrier+ EMEA,20,2025-05-16,100.0
-Carrier+ EMEA,21,2025-05-23,100.0
-Carrier+ EMEA,22,2025-05-30,100.0
-Carrier+ EMEA,23,2025-06-06,100.0
-Carrier+ EMEA,24,2025-06-13,100.0
-Carrier+ EMEA,25,2025-06-20,100.0
-Carrier+ EMEA,26,2025-06-27,100.0
-Carrier+ EMEA,27,2025-07-04,100.0
-Carrier+ EMEA,28,2025-07-11,100.0
-Carrier+ EMEA,29,2025-07-18,100.0
-Carrier+ EMEA,30,2025-07-25,100.0
-Carrier+ EMEA,31,2025-08-01,100.0
-Carrier+ EMEA,32,2025-08-08,100.0
-Carrier+ EMEA,33,2025-08-15,100.0
-Carrier+ EMEA,34,2025-08-22,100.0
-Carrier+ EMEA,35,2025-08-29,100.0
-Carrier+ EMEA,36,2025-09-05,100.0
-Carrier+ EMEA,37,2025-09-12,100.0
-Carrier+ EMEA,38,2025-09-19,100.0
-Carrier+ EMEA,39,2025-09-26,100.0
-Carrier+ EMEA,40,2025-10-03,100.0
-Carrier+ EMEA,41,2025-10-10,100.0
-Carrier+ EMEA,42,2025-10-17,100.0
-Carrier+ EMEA,43,2025-10-24,100.0
-Carrier+ EMEA,44,2025-10-31,100.0
-Carrier+ EMEA,45,2025-11-07,100.0
-Carrier+ EMEA,46,2025-11-14,100.0
-Carrier+ EMEA,47,2025-11-21,100.0
-Carrier+ EMEA,48,2025-11-28,100.0
-Carrier+ EMEA,49,2025-12-05,100.0
-Carrier+ EMEA,50,2025-12-12,96.43
-Carrier+ EMEA,51,2025-12-19,100.0
-Carrier+ EMEA,52,2025-12-26,100.0
-Carrier+ EMEA,1,2026-01-02,100.0
-Carrier+ EMEA,2,2026-01-09,100.0
-Carrier+ EMEA,3,2026-01-16,100.0
-Carrier+ EMEA,4,2026-01-23,100.0
-Carrier+ EMEA,5,2026-01-30,100.0
-Carrier+ EMEA,6,2026-02-06,100.0
-Carrier+ EMEA,7,2026-02-13,100.0
-Carrier+ EMEA,8,2026-02-20,100.0
-Broadband Access,1,2025-01-03,100.0
-Broadband Access,2,2025-01-10,100.0
-Broadband Access,3,2025-01-17,100.0
-Broadband Access,4,2025-01-24,100.0
-Broadband Access,5,2025-01-31,100.0
-Broadband Access,6,2025-02-07,100.0
-Broadband Access,7,2025-02-14,100.0
-Broadband Access,8,2025-02-21,100.0
-Broadband Access,9,2025-02-28,100.0
-Broadband Access,10,2025-03-07,100.0
-Broadband Access,11,2025-03-14,100.0
-Broadband Access,12,2025-03-21,100.0
-Broadband Access,13,2025-03-28,100.0
-Broadband Access,14,2025-04-04,100.0
-Broadband Access,15,2025-04-11,100.0
-Broadband Access,16,2025-04-18,100.0
-Broadband Access,17,2025-04-25,100.0
-Broadband Access,18,2025-05-02,100.0
-Broadband Access,19,2025-05-09,100.0
-Broadband Access,20,2025-05-16,100.0
-Broadband Access,21,2025-05-23,100.0
-Broadband Access,22,2025-05-30,100.0
-Broadband Access,23,2025-06-06,100.0
-Broadband Access,24,2025-06-13,100.0
-Broadband Access,25,2025-06-20,100.0
-Broadband Access,26,2025-06-27,100.0
-Broadband Access,27,2025-07-04,100.0
-Broadband Access,28,2025-07-11,100.0
-Broadband Access,29,2025-07-18,100.0
-Broadband Access,30,2025-07-25,100.0
-Broadband Access,31,2025-08-01,100.0
-Broadband Access,32,2025-08-08,100.0
-Broadband Access,33,2025-08-15,100.0
-Broadband Access,34,2025-08-22,100.0
-Broadband Access,35,2025-08-29,100.0
-Broadband Access,36,2025-09-05,100.0
-Broadband Access,37,2025-09-12,100.0
-Broadband Access,38,2025-09-19,100.0
-Broadband Access,39,2025-09-26,100.0
-Broadband Access,40,2025-10-03,100.0
-Broadband Access,41,2025-10-10,100.0
-Broadband Access,42,2025-10-17,100.0
-Broadband Access,43,2025-10-24,100.0
-Broadband Access,44,2025-10-31,100.0
-Broadband Access,45,2025-11-07,100.0
-Broadband Access,46,2025-11-14,100.0
-Broadband Access,47,2025-11-21,100.0
-Broadband Access,48,2025-11-28,100.0
-Broadband Access,49,2025-12-05,100.0
-Broadband Access,50,2025-12-12,100.0
-Broadband Access,51,2025-12-19,100.0
-Broadband Access,52,2025-12-26,100.0
-Broadband Access,1,2026-01-02,100.0
-Broadband Access,2,2026-01-09,100.0
-Broadband Access,3,2026-01-16,100.0
-Broadband Access,4,2026-01-23,100.0
-Broadband Access,5,2026-01-30,100.0
-Broadband Access,6,2026-02-06,100.0
-Broadband Access,7,2026-02-13,100.0
-Broadband Access,8,2026-02-20,100.0
-ALMS,1,2025-01-03,100.0
-ALMS,2,2025-01-10,100.0
-ALMS,3,2025-01-17,100.0
-ALMS,4,2025-01-24,100.0
-ALMS,5,2025-01-31,100.0
-ALMS,6,2025-02-07,100.0
-ALMS,7,2025-02-14,100.0
-ALMS,8,2025-02-21,100.0
-ALMS,9,2025-02-28,100.0
-ALMS,10,2025-03-07,100.0
-ALMS,11,2025-03-14,100.0
-ALMS,12,2025-03-21,94.42
-ALMS,13,2025-03-28,100.0
-ALMS,14,2025-04-04,100.0
-ALMS,15,2025-04-11,100.0
-ALMS,16,2025-04-18,100.0
-ALMS,17,2025-04-25,100.0
-ALMS,18,2025-05-02,100.0
-ALMS,19,2025-05-09,100.0
-ALMS,20,2025-05-16,100.0
-ALMS,21,2025-05-23,100.0
-ALMS,22,2025-05-30,100.0
-ALMS,23,2025-06-06,100.0
-ALMS,24,2025-06-13,100.0
-ALMS,25,2025-06-20,100.0
-ALMS,26,2025-06-27,100.0
-ALMS,27,2025-07-04,100.0
-ALMS,28,2025-07-11,100.0
-ALMS,29,2025-07-18,100.0
-ALMS,30,2025-07-25,100.0
-ALMS,31,2025-08-01,100.0
-ALMS,32,2025-08-08,100.0
-ALMS,33,2025-08-15,100.0
-ALMS,34,2025-08-22,100.0
-ALMS,35,2025-08-29,100.0
-ALMS,36,2025-09-05,100.0
-ALMS,37,2025-09-12,100.0
-ALMS,38,2025-09-19,100.0
-ALMS,39,2025-09-26,100.0
-ALMS,40,2025-10-03,100.0
-ALMS,41,2025-10-10,100.0
-ALMS,42,2025-10-17,100.0
-ALMS,43,2025-10-24,100.0
-ALMS,44,2025-10-31,100.0
-ALMS,45,2025-11-07,100.0
-ALMS,46,2025-11-14,100.0
-ALMS,47,2025-11-21,100.0
-ALMS,48,2025-11-28,100.0
-ALMS,49,2025-12-05,100.0
-ALMS,50,2025-12-12,100.0
-ALMS,51,2025-12-19,100.0
-ALMS,52,2025-12-26,100.0
-ALMS,1,2026-01-02,100.0
-ALMS,2,2026-01-09,100.0
-ALMS,3,2026-01-16,100.0
-ALMS,4,2026-01-23,100.0
-ALMS,5,2026-01-30,100.0
-ALMS,6,2026-02-06,100.0
-ALMS,7,2026-02-13,100.0
-ALMS,8,2026-02-20,100.0
-AirLink Mobility Manager,1,2025-01-03,100.0
-AirLink Mobility Manager,2,2025-01-10,100.0
-AirLink Mobility Manager,3,2025-01-17,100.0
-AirLink Mobility Manager,4,2025-01-24,100.0
-AirLink Mobility Manager,5,2025-01-31,100.0
-AirLink Mobility Manager,6,2025-02-07,100.0
-AirLink Mobility Manager,7,2025-02-14,100.0
-AirLink Mobility Manager,8,2025-02-21,100.0
-AirLink Mobility Manager,9,2025-02-28,100.0
-AirLink Mobility Manager,10,2025-03-07,100.0
-AirLink Mobility Manager,11,2025-03-14,100.0
-AirLink Mobility Manager,12,2025-03-21,100.0
-AirLink Mobility Manager,13,2025-03-28,100.0
-AirLink Mobility Manager,14,2025-04-04,98.18
-AirLink Mobility Manager,15,2025-04-11,100.0
-AirLink Mobility Manager,16,2025-04-18,100.0
-AirLink Mobility Manager,17,2025-04-25,100.0
-AirLink Mobility Manager,18,2025-05-02,100.0
-AirLink Mobility Manager,19,2025-05-09,100.0
-AirLink Mobility Manager,20,2025-05-16,100.0
-AirLink Mobility Manager,21,2025-05-23,100.0
-AirLink Mobility Manager,22,2025-05-30,100.0
-AirLink Mobility Manager,23,2025-06-06,100.0
-AirLink Mobility Manager,24,2025-06-13,100.0
-AirLink Mobility Manager,25,2025-06-20,100.0
-AirLink Mobility Manager,26,2025-06-27,100.0
-AirLink Mobility Manager,27,2025-07-04,100.0
-AirLink Mobility Manager,28,2025-07-11,100.0
-AirLink Mobility Manager,29,2025-07-18,100.0
-AirLink Mobility Manager,30,2025-07-25,100.0
-AirLink Mobility Manager,31,2025-08-01,100.0
-AirLink Mobility Manager,32,2025-08-08,100.0
-AirLink Mobility Manager,33,2025-08-15,100.0
-AirLink Mobility Manager,34,2025-08-22,100.0
-AirLink Mobility Manager,35,2025-08-29,100.0
-AirLink Mobility Manager,36,2025-09-05,100.0
-AirLink Mobility Manager,37,2025-09-12,100.0
-AirLink Mobility Manager,38,2025-09-19,100.0
-AirLink Mobility Manager,39,2025-09-26,100.0
-AirLink Mobility Manager,40,2025-10-03,100.0
-AirLink Mobility Manager,41,2025-10-10,100.0
-AirLink Mobility Manager,42,2025-10-17,100.0
-AirLink Mobility Manager,43,2025-10-24,100.0
-AirLink Mobility Manager,44,2025-10-31,100.0
-AirLink Mobility Manager,45,2025-11-07,100.0
-AirLink Mobility Manager,46,2025-11-14,100.0
-AirLink Mobility Manager,47,2025-11-21,100.0
-AirLink Mobility Manager,48,2025-11-28,100.0
-AirLink Mobility Manager,49,2025-12-05,100.0
-AirLink Mobility Manager,50,2025-12-12,100.0
-AirLink Mobility Manager,51,2025-12-19,100.0
-AirLink Mobility Manager,52,2025-12-26,100.0
-AirLink Mobility Manager,1,2026-01-02,100.0
-AirLink Mobility Manager,2,2026-01-09,100.0
-AirLink Mobility Manager,3,2026-01-16,100.0
-AirLink Mobility Manager,4,2026-01-23,100.0
-AirLink Mobility Manager,5,2026-01-30,100.0
-AirLink Mobility Manager,6,2026-02-06,100.0
-AirLink Mobility Manager,7,2026-02-13,100.0
-AirLink Mobility Manager,8,2026-02-20,100.0
+AirVantage Platform,44,2025-12-05,100.0
+AirVantage Platform,45,2025-12-12,100.0
+AirVantage Platform,46,2025-12-19,100.0
+AirVantage Platform,47,2025-12-26,100.0
+AirVantage Platform,48,2026-01-02,100.0
+AirVantage Platform,49,2026-01-09,100.0
+AirVantage Platform,50,2026-01-16,100.0
+AirVantage Platform,51,2026-01-23,100.0
+AirVantage Platform,52,2026-01-30,100.0
+AirVantage Platform,1,2026-02-06,100.0
+AirVantage Platform,2,2026-02-13,100.0
+AirVantage Platform,3,2026-02-20,100.0
+AirVantage Platform,4,2026-02-27,100.0
+AirVantage Platform,5,2026-03-06,100.0
+SIM and Connectivity Management,44,2025-12-05,100.0
+SIM and Connectivity Management,45,2025-12-12,100.0
+SIM and Connectivity Management,46,2025-12-19,100.0
+SIM and Connectivity Management,47,2025-12-26,100.0
+SIM and Connectivity Management,48,2026-01-02,100.0
+SIM and Connectivity Management,49,2026-01-09,100.0
+SIM and Connectivity Management,50,2026-01-16,100.0
+SIM and Connectivity Management,51,2026-01-23,100.0
+SIM and Connectivity Management,52,2026-01-30,100.0
+SIM and Connectivity Management,1,2026-02-06,100.0
+SIM and Connectivity Management,2,2026-02-13,100.0
+SIM and Connectivity Management,3,2026-02-20,100.0
+SIM and Connectivity Management,4,2026-02-27,100.0
+SIM and Connectivity Management,5,2026-03-06,100.0
+Device Management,44,2025-12-05,100.0
+Device Management,45,2025-12-12,100.0
+Device Management,46,2025-12-19,100.0
+Device Management,47,2025-12-26,100.0
+Device Management,48,2026-01-02,100.0
+Device Management,49,2026-01-09,100.0
+Device Management,50,2026-01-16,100.0
+Device Management,51,2026-01-23,100.0
+Device Management,52,2026-01-30,100.0
+Device Management,1,2026-02-06,100.0
+Device Management,2,2026-02-13,100.0
+Device Management,3,2026-02-20,100.0
+Device Management,4,2026-02-27,100.0
+Device Management,5,2026-03-06,100.0
+AirVantage UI / API,44,2025-12-05,100.0
+AirVantage UI / API,45,2025-12-12,100.0
+AirVantage UI / API,46,2025-12-19,100.0
+AirVantage UI / API,47,2025-12-26,100.0
+AirVantage UI / API,48,2026-01-02,100.0
+AirVantage UI / API,49,2026-01-09,100.0
+AirVantage UI / API,50,2026-01-16,100.0
+AirVantage UI / API,51,2026-01-23,100.0
+AirVantage UI / API,52,2026-01-30,100.0
+AirVantage UI / API,1,2026-02-06,100.0
+AirVantage UI / API,2,2026-02-13,100.0
+AirVantage UI / API,3,2026-02-20,100.0
+AirVantage UI / API,4,2026-02-27,100.0
+AirVantage UI / API,5,2026-03-06,100.0
+Cloud Connector Data Push,44,2025-12-05,100.0
+Cloud Connector Data Push,45,2025-12-12,100.0
+Cloud Connector Data Push,46,2025-12-19,100.0
+Cloud Connector Data Push,47,2025-12-26,100.0
+Cloud Connector Data Push,48,2026-01-02,100.0
+Cloud Connector Data Push,49,2026-01-09,100.0
+Cloud Connector Data Push,50,2026-01-16,100.0
+Cloud Connector Data Push,51,2026-01-23,100.0
+Cloud Connector Data Push,52,2026-01-30,100.0
+Cloud Connector Data Push,1,2026-02-06,100.0
+Cloud Connector Data Push,2,2026-02-13,100.0
+Cloud Connector Data Push,3,2026-02-20,100.0
+Cloud Connector Data Push,4,2026-02-27,100.0
+Cloud Connector Data Push,5,2026-03-06,100.0
+Smart Connectivity Overall (Weighted Avg),44,2025-12-05,100.0
+Smart Connectivity Overall (Weighted Avg),45,2025-12-12,100.0
+Smart Connectivity Overall (Weighted Avg),46,2025-12-19,100.0
+Smart Connectivity Overall (Weighted Avg),47,2025-12-26,100.0
+Smart Connectivity Overall (Weighted Avg),48,2026-01-02,100.0
+Smart Connectivity Overall (Weighted Avg),49,2026-01-09,100.0
+Smart Connectivity Overall (Weighted Avg),50,2026-01-16,100.0
+Smart Connectivity Overall (Weighted Avg),51,2026-01-23,100.0
+Smart Connectivity Overall (Weighted Avg),52,2026-01-30,100.0
+Smart Connectivity Overall (Weighted Avg),1,2026-02-06,100.0
+Smart Connectivity Overall (Weighted Avg),2,2026-02-13,100.0
+Smart Connectivity Overall (Weighted Avg),3,2026-02-20,100.0
+Smart Connectivity Overall (Weighted Avg),4,2026-02-27,100.0
+Advanced,44,2025-12-05,100.0
+Advanced,45,2025-12-12,100.0
+Advanced,46,2025-12-19,100.0
+Advanced,47,2025-12-26,100.0
+Advanced,48,2026-01-02,100.0
+Advanced,49,2026-01-09,100.0
+Advanced,50,2026-01-16,100.0
+Advanced,51,2026-01-23,100.0
+Advanced,52,2026-01-30,100.0
+Advanced,1,2026-02-06,100.0
+Advanced,2,2026-02-13,100.0
+Advanced,3,2026-02-20,100.0
+Advanced,4,2026-02-27,100.0
+Advanced,5,2026-03-06,100.0
+Essentials1 (Sparkle),44,2025-12-05,100.0
+Essentials1 (Sparkle),45,2025-12-12,100.0
+Essentials1 (Sparkle),46,2025-12-19,100.0
+Essentials1 (Sparkle),47,2025-12-26,100.0
+Essentials1 (Sparkle),48,2026-01-02,100.0
+Essentials1 (Sparkle),49,2026-01-09,100.0
+Essentials1 (Sparkle),50,2026-01-16,100.0
+Essentials1 (Sparkle),51,2026-01-23,100.0
+Essentials1 (Sparkle),52,2026-01-30,100.0
+Essentials1 (Sparkle),1,2026-02-06,100.0
+Essentials1 (Sparkle),2,2026-02-13,100.0
+Essentials1 (Sparkle),3,2026-02-20,100.0
+Essentials1 (Sparkle),4,2026-02-27,100.0
+Essentials1 (Sparkle),5,2026-03-06,100.0
+Essentials2 (BICS),44,2025-12-05,100.0
+Essentials2 (BICS),45,2025-12-12,100.0
+Essentials2 (BICS),46,2025-12-19,100.0
+Essentials2 (BICS),47,2025-12-26,100.0
+Essentials2 (BICS),48,2026-01-02,100.0
+Essentials2 (BICS),49,2026-01-09,100.0
+Essentials2 (BICS),50,2026-01-16,100.0
+Essentials2 (BICS),51,2026-01-23,100.0
+Essentials2 (BICS),52,2026-01-30,100.0
+Essentials2 (BICS),1,2026-02-06,100.0
+Essentials2 (BICS),2,2026-02-13,100.0
+Essentials2 (BICS),3,2026-02-20,100.0
+Essentials2 (BICS),4,2026-02-27,100.0
+Essentials2 (BICS),5,2026-03-06,100.0
+Essentials3 (JT - Velos IoT),44,2025-12-05,100.0
+Essentials3 (JT - Velos IoT),45,2025-12-12,100.0
+Essentials3 (JT - Velos IoT),46,2025-12-19,100.0
+Essentials3 (JT - Velos IoT),47,2025-12-26,100.0
+Essentials3 (JT - Velos IoT),48,2026-01-02,100.0
+Essentials3 (JT - Velos IoT),49,2026-01-09,100.0
+Essentials3 (JT - Velos IoT),50,2026-01-16,100.0
+Essentials3 (JT - Velos IoT),51,2026-01-23,100.0
+Essentials3 (JT - Velos IoT),52,2026-01-30,100.0
+Essentials3 (JT - Velos IoT),1,2026-02-06,100.0
+Essentials3 (JT - Velos IoT),2,2026-02-13,100.0
+Essentials3 (JT - Velos IoT),3,2026-02-20,100.0
+Essentials3 (JT - Velos IoT),4,2026-02-27,100.0
+Essentials3 (JT - Velos IoT),5,2026-03-06,100.0
+Essentials4,44,2025-12-05,100.0
+Essentials4,45,2025-12-12,100.0
+Essentials4,46,2025-12-19,100.0
+Essentials4,47,2025-12-26,100.0
+Essentials4,48,2026-01-02,100.0
+Essentials4,49,2026-01-09,100.0
+Essentials4,50,2026-01-16,100.0
+Essentials4,51,2026-01-23,100.0
+Essentials4,52,2026-01-30,100.0
+Essentials4,1,2026-02-06,100.0
+Essentials4,2,2026-02-13,100.0
+Essentials4,3,2026-02-20,100.0
+Essentials4,4,2026-02-27,100.0
+Essentials4,5,2026-03-06,100.0
+Essentials5 (Orange 901),44,2025-12-05,100.0
+Essentials5 (Orange 901),45,2025-12-12,100.0
+Essentials5 (Orange 901),46,2025-12-19,100.0
+Essentials5 (Orange 901),47,2025-12-26,100.0
+Essentials5 (Orange 901),48,2026-01-02,100.0
+Essentials5 (Orange 901),49,2026-01-09,100.0
+Essentials5 (Orange 901),50,2026-01-16,100.0
+Essentials5 (Orange 901),51,2026-01-23,100.0
+Essentials5 (Orange 901),52,2026-01-30,100.0
+Essentials5 (Orange 901),1,2026-02-06,100.0
+Essentials5 (Orange 901),2,2026-02-13,100.0
+Essentials5 (Orange 901),3,2026-02-20,100.0
+Essentials5 (Orange 901),4,2026-02-27,100.0
+Essentials5 (Orange 901),5,2026-03-06,100.0
+Carrier+ NAM,44,2025-12-05,100.0
+Carrier+ NAM,45,2025-12-12,100.0
+Carrier+ NAM,46,2025-12-19,100.0
+Carrier+ NAM,47,2025-12-26,100.0
+Carrier+ NAM,48,2026-01-02,100.0
+Carrier+ NAM,49,2026-01-09,100.0
+Carrier+ NAM,50,2026-01-16,100.0
+Carrier+ NAM,51,2026-01-23,100.0
+Carrier+ NAM,52,2026-01-30,100.0
+Carrier+ NAM,1,2026-02-06,100.0
+Carrier+ NAM,2,2026-02-13,98.33
+Carrier+ NAM,3,2026-02-20,100.0
+Carrier+ NAM,4,2026-02-27,100.0
+Carrier+ NAM,5,2026-03-06,100.0
+Carrier+ EMEA,44,2025-12-05,100.0
+Carrier+ EMEA,45,2025-12-12,96.43
+Carrier+ EMEA,46,2025-12-19,100.0
+Carrier+ EMEA,47,2025-12-26,100.0
+Carrier+ EMEA,48,2026-01-02,100.0
+Carrier+ EMEA,49,2026-01-09,100.0
+Carrier+ EMEA,50,2026-01-16,100.0
+Carrier+ EMEA,51,2026-01-23,100.0
+Carrier+ EMEA,52,2026-01-30,100.0
+Carrier+ EMEA,1,2026-02-06,100.0
+Carrier+ EMEA,2,2026-02-13,100.0
+Carrier+ EMEA,3,2026-02-20,100.0
+Carrier+ EMEA,4,2026-02-27,100.0
+Carrier+ EMEA,5,2026-03-06,100.0
+Broadband Access,44,2025-12-05,100.0
+Broadband Access,45,2025-12-12,100.0
+Broadband Access,46,2025-12-19,100.0
+Broadband Access,47,2025-12-26,100.0
+Broadband Access,48,2026-01-02,100.0
+Broadband Access,49,2026-01-09,100.0
+Broadband Access,50,2026-01-16,100.0
+Broadband Access,51,2026-01-23,100.0
+Broadband Access,52,2026-01-30,100.0
+Broadband Access,1,2026-02-06,100.0
+Broadband Access,2,2026-02-13,100.0
+Broadband Access,3,2026-02-20,100.0
+Broadband Access,4,2026-02-27,100.0
+Broadband Access,5,2026-03-06,100.0
+ALMS,44,2025-12-05,100.0
+ALMS,45,2025-12-12,100.0
+ALMS,46,2025-12-19,100.0
+ALMS,47,2025-12-26,100.0
+ALMS,48,2026-01-02,100.0
+ALMS,49,2026-01-09,100.0
+ALMS,50,2026-01-16,100.0
+ALMS,51,2026-01-23,100.0
+ALMS,52,2026-01-30,100.0
+ALMS,1,2026-02-06,100.0
+ALMS,2,2026-02-13,100.0
+ALMS,3,2026-02-20,100.0
+ALMS,4,2026-02-27,100.0
+ALMS,5,2026-03-06,100.0
+AirLink Mobility Manager,44,2025-12-05,100.0
+AirLink Mobility Manager,45,2025-12-12,100.0
+AirLink Mobility Manager,46,2025-12-19,100.0
+AirLink Mobility Manager,47,2025-12-26,100.0
+AirLink Mobility Manager,48,2026-01-02,100.0
+AirLink Mobility Manager,49,2026-01-09,100.0
+AirLink Mobility Manager,50,2026-01-16,100.0
+AirLink Mobility Manager,51,2026-01-23,100.0
+AirLink Mobility Manager,52,2026-01-30,100.0
+AirLink Mobility Manager,1,2026-02-06,100.0
+AirLink Mobility Manager,2,2026-02-13,100.0
+AirLink Mobility Manager,3,2026-02-20,100.0
+AirLink Mobility Manager,4,2026-02-27,100.0
+AirLink Mobility Manager,5,2026-03-06,100.0
