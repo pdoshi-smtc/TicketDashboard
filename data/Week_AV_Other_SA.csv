@@ -13,6 +13,7 @@ AirVantage Platform,2,2026-02-13,100.0
 AirVantage Platform,3,2026-02-20,100.0
 AirVantage Platform,4,2026-02-27,100.0
 AirVantage Platform,5,2026-03-06,100.0
+AirVantage Platform,6,2026-03-13,100.0
 SIM and Connectivity Management,44,2025-12-05,100.0
 SIM and Connectivity Management,45,2025-12-12,100.0
 SIM and Connectivity Management,46,2025-12-19,100.0
@@ -27,6 +28,7 @@ SIM and Connectivity Management,2,2026-02-13,100.0
 SIM and Connectivity Management,3,2026-02-20,100.0
 SIM and Connectivity Management,4,2026-02-27,100.0
 SIM and Connectivity Management,5,2026-03-06,100.0
+SIM and Connectivity Management,6,2026-03-13,100.0
 Device Management,44,2025-12-05,100.0
 Device Management,45,2025-12-12,100.0
 Device Management,46,2025-12-19,100.0
@@ -41,6 +43,7 @@ Device Management,2,2026-02-13,100.0
 Device Management,3,2026-02-20,100.0
 Device Management,4,2026-02-27,100.0
 Device Management,5,2026-03-06,100.0
+Device Management,6,2026-03-13,100.0
 AirVantage UI / API,44,2025-12-05,100.0
 AirVantage UI / API,45,2025-12-12,100.0
 AirVantage UI / API,46,2025-12-19,100.0
@@ -55,6 +58,7 @@ AirVantage UI / API,2,2026-02-13,100.0
 AirVantage UI / API,3,2026-02-20,100.0
 AirVantage UI / API,4,2026-02-27,100.0
 AirVantage UI / API,5,2026-03-06,100.0
+AirVantage UI / API,6,2026-03-13,100.0
 Cloud Connector Data Push,44,2025-12-05,100.0
 Cloud Connector Data Push,45,2025-12-12,100.0
 Cloud Connector Data Push,46,2025-12-19,100.0
@@ -69,6 +73,7 @@ Cloud Connector Data Push,2,2026-02-13,100.0
 Cloud Connector Data Push,3,2026-02-20,100.0
 Cloud Connector Data Push,4,2026-02-27,100.0
 Cloud Connector Data Push,5,2026-03-06,100.0
+Cloud Connector Data Push,6,2026-03-13,100.0
 Smart Connectivity Overall (Weighted Avg),44,2025-12-05,100.0
 Smart Connectivity Overall (Weighted Avg),45,2025-12-12,100.0
 Smart Connectivity Overall (Weighted Avg),46,2025-12-19,100.0
@@ -96,6 +101,7 @@ Advanced,2,2026-02-13,100.0
 Advanced,3,2026-02-20,100.0
 Advanced,4,2026-02-27,100.0
 Advanced,5,2026-03-06,100.0
+Advanced,6,2026-03-13,100.0
 Essentials1 (Sparkle),44,2025-12-05,100.0
 Essentials1 (Sparkle),45,2025-12-12,100.0
 Essentials1 (Sparkle),46,2025-12-19,100.0
@@ -110,6 +116,7 @@ Essentials1 (Sparkle),2,2026-02-13,100.0
 Essentials1 (Sparkle),3,2026-02-20,100.0
 Essentials1 (Sparkle),4,2026-02-27,100.0
 Essentials1 (Sparkle),5,2026-03-06,100.0
+Essentials1 (Sparkle),6,2026-03-13,100.0
 Essentials2 (BICS),44,2025-12-05,100.0
 Essentials2 (BICS),45,2025-12-12,100.0
 Essentials2 (BICS),46,2025-12-19,100.0
@@ -124,6 +131,7 @@ Essentials2 (BICS),2,2026-02-13,100.0
 Essentials2 (BICS),3,2026-02-20,100.0
 Essentials2 (BICS),4,2026-02-27,100.0
 Essentials2 (BICS),5,2026-03-06,100.0
+Essentials2 (BICS),6,2026-03-13,100.0
 Essentials3 (JT - Velos IoT),44,2025-12-05,100.0
 Essentials3 (JT - Velos IoT),45,2025-12-12,100.0
 Essentials3 (JT - Velos IoT),46,2025-12-19,100.0
@@ -138,6 +146,7 @@ Essentials3 (JT - Velos IoT),2,2026-02-13,100.0
 Essentials3 (JT - Velos IoT),3,2026-02-20,100.0
 Essentials3 (JT - Velos IoT),4,2026-02-27,100.0
 Essentials3 (JT - Velos IoT),5,2026-03-06,100.0
+Essentials3 (JT - Velos IoT),6,2026-03-13,100.0
 Essentials4,44,2025-12-05,100.0
 Essentials4,45,2025-12-12,100.0
 Essentials4,46,2025-12-19,100.0
@@ -152,6 +161,7 @@ Essentials4,2,2026-02-13,100.0
 Essentials4,3,2026-02-20,100.0
 Essentials4,4,2026-02-27,100.0
 Essentials4,5,2026-03-06,100.0
+Essentials4,6,2026-03-13,100.0
 Essentials5 (Orange 901),44,2025-12-05,100.0
 Essentials5 (Orange 901),45,2025-12-12,100.0
 Essentials5 (Orange 901),46,2025-12-19,100.0
@@ -166,6 +176,7 @@ Essentials5 (Orange 901),2,2026-02-13,100.0
 Essentials5 (Orange 901),3,2026-02-20,100.0
 Essentials5 (Orange 901),4,2026-02-27,100.0
 Essentials5 (Orange 901),5,2026-03-06,100.0
+Essentials5 (Orange 901),6,2026-03-13,100.0
 Carrier+ NAM,44,2025-12-05,100.0
 Carrier+ NAM,45,2025-12-12,100.0
 Carrier+ NAM,46,2025-12-19,100.0
@@ -180,6 +191,7 @@ Carrier+ NAM,2,2026-02-13,98.33
 Carrier+ NAM,3,2026-02-20,100.0
 Carrier+ NAM,4,2026-02-27,100.0
 Carrier+ NAM,5,2026-03-06,100.0
+Carrier+ NAM,6,2026-03-13,100.0
 Carrier+ EMEA,44,2025-12-05,100.0
 Carrier+ EMEA,45,2025-12-12,96.43
 Carrier+ EMEA,46,2025-12-19,100.0
@@ -194,6 +206,7 @@ Carrier+ EMEA,2,2026-02-13,100.0
 Carrier+ EMEA,3,2026-02-20,100.0
 Carrier+ EMEA,4,2026-02-27,100.0
 Carrier+ EMEA,5,2026-03-06,100.0
+Carrier+ EMEA,6,2026-03-13,100.0
 Broadband Access,44,2025-12-05,100.0
 Broadband Access,45,2025-12-12,100.0
 Broadband Access,46,2025-12-19,100.0
@@ -208,6 +221,7 @@ Broadband Access,2,2026-02-13,100.0
 Broadband Access,3,2026-02-20,100.0
 Broadband Access,4,2026-02-27,100.0
 Broadband Access,5,2026-03-06,100.0
+Broadband Access,6,2026-03-13,100.0
 ALMS,44,2025-12-05,100.0
 ALMS,45,2025-12-12,100.0
 ALMS,46,2025-12-19,100.0
@@ -222,6 +236,7 @@ ALMS,2,2026-02-13,100.0
 ALMS,3,2026-02-20,100.0
 ALMS,4,2026-02-27,100.0
 ALMS,5,2026-03-06,100.0
+ALMS,6,2026-03-13,100.0
 AirLink Mobility Manager,44,2025-12-05,100.0
 AirLink Mobility Manager,45,2025-12-12,100.0
 AirLink Mobility Manager,46,2025-12-19,100.0
@@ -236,3 +251,4 @@ AirLink Mobility Manager,2,2026-02-13,100.0
 AirLink Mobility Manager,3,2026-02-20,100.0
 AirLink Mobility Manager,4,2026-02-27,100.0
 AirLink Mobility Manager,5,2026-03-06,100.0
+AirLink Mobility Manager,6,2026-03-13,100.0

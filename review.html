@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Doshi - Semtech GNOC Internship</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #60a5fa;
+            --dark: #1e293b;
+            --light: #ffffff;
+            --text: #475569;
+            --text-dark: #1e293b;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Subtle Pattern Background */
+        .bg-pattern {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(37, 99, 235, 0.1) 35px, rgba(37, 99, 235, 0.1) 70px);
+            pointer-events: none;
+        }
+
+        /* Floating Elements */
+        .floating-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            background: var(--secondary);
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(10px) translateX(-10px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-10px) translateX(-20px) rotate(270deg);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-top: 8rem;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero-duration {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .hero-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Company Section */
+        .company-section {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .company-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .company-title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .company-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .company-info h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .company-info p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .team-info {
+            background:#f0f9ff;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--accent);
+        }
+
+        .team-info p {
+            text-align: center;
+        }
+
+        .team-info strong {
+            color: var(--text-dark);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .project-image:hover {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+        }
+
+        .project-description {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--accent);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tech-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background:#f0f9ff;
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            margin: 0.3rem;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Key Learnings */
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .learning-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .learning-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+        }
+
+        .learning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+        }
+
+        .learning-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .learning-card p {
+            color: var(--text);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Timeline Summary Section */
+        .timeline-summary {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            text-align: center;
+            padding: 1.5rem;
+            background:#f0f9ff;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+        }
+
+        .timeline-week {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-dates {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1001;
+            transition: width 0.3s;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+        }
+
+        /* Achievements Section */
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .achievement-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            border-color: var(--accent);
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .company-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-info {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid,
+            .learnings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Background Pattern
+    <div class="bg-pattern"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div> -->
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <h2>Pranav Doshi</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#learnings">Impact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div style="
+          max-width: 80%;
+          margin: 0 auto 3rem auto; /* centers the box itself */
+          background: var(--bg-card);
+          border-radius: 20px;
+          padding: 2rem;
+          border: 2px solid var(--primary);
+          box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+          text-align: center; /* centers text inside */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        ">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">Vishwakarma Institute of Technology</p>
+
+                    <div style="  margin-top: 1rem;">
+                     <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">Internship Mid-Semester Presentation</h2>
+                     </div>
+                    <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <div>
+                            <p style="color: var(--text); font-weight: 600; margin-bottom: 0.3rem;">Presented By:</p>
+                            <p style="color: var(--text-dark); font-size: 1.1rem;">Pranav Doshi [12211541]</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text); font-weight: 600; margin-bottom: 0.3rem;">Internal Guide:</p>
+                            <p style="color: var(--text-dark); font-size: 1.1rem;">Dr. (Ms.) Ratna N. Patil</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text); font-weight: 600; margin-bottom: 0.3rem;">Industry Manager:</p>
+                            <p style="color: var(--text-dark); font-size: 1.1rem;">Asim Khamari</p>
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;">
+                                            <p style="color: var(--text-dark); font-weight: 600;">Department of Artificial Intelligence And Data Science</p>
+
+                        <p style="color: var(--text);"> SEM VIII F.Y. (2025-2026)</p>
+                    </div>
+                </div>
+
+                <!-- Index Section -->
+                <div id="content" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem; margin: 3rem auto; max-width: 800px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                    <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 2rem; font-weight: 700; text-align: center;">Contents</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left;">
+                        <div>
+                            <a href="#about" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; margin-bottom: 0.8rem; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">1. About Semetch</strong><br>
+                                <small style="color: var(--text);">About Semtech & GNOC Team</small>
+                            </a>
+                         
+                            <a href="#projects" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">2. Key Projects & Solutions</strong><br>
+                                <small style="color: var(--text);">Key AI/ML Solutions</small>
+                            </a>
+                            <a href="#projects" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">3. Network Operations Dashboards</strong><br>
+                                <small style="color: var(--text);">Power BI & Grafana Dashboards</small>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#skills" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; margin-bottom: 0.8rem; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">4. Technical Expertise</strong><br>
+                                <small style="color: var(--text);">Technologies Implemented</small>
+                            </a>
+                            <a href="#learnings" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; margin-bottom: 0.8rem; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">5. Key Learnings and Imapct</strong><br>
+                                <small style="color: var(--text);">Impact & Knowledge Gained</small>
+                            </a>
+                            <!-- <a href="#hero" style="display: block; padding: 0.8rem 1.2rem; background:#f0f9ff; border-radius: 10px; text-decoration: none; color: var(--text-dark); transition: all 0.3s; border: 1px solid transparent;">
+                                <strong style="color: var(--primary);">6. Achievements</strong><br>
+                                <small style="color: var(--text);">Metrics & Milestones</small>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <h1 class="hero">GNOC AI/ML Automation Journey</h1>
+                <p class="hero-duration">12-Month Internship Program | June 2025 - June 2026</p>
+                
+                <div class="hero-info">
+                    <div class="info-card">
+                        <h3>Name</h3>
+                        <p>Pranav Doshi</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Role</h3>
+                        <p>GNOC & CS Intern</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Company</h3>
+                        <p>Semtech Corporation</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Manager</h3>
+                        <p>Asim Khamari</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Team</h3>
+                        <p>Global Network Operations</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Focus</h3>
+                        <p>AI/ML Automation</p>
+                    </div>
+
+                     <div class="achievement-card">
+                        <div class="achievement-number">6</div>
+                        <div class="achievement-label">Projects</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">11</div>
+                        <div class="achievement-label">Weeks Completed</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">15</div>
+                        <div class="achievement-label">Technologies working with</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">100%</div>
+                        <div class="achievement-label">Automation Focus</div>
+                    </div>
+                </div>
+
+                <div class="achievements-container">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="company-section">
+                <div class="company-header">
+                    <h2 class="company-title">About Semtech & My Mission</h2>
+                </div>
+                <div class="company-content">
+                    <div class="company-info">
+                        <h3>Semtech Corporation</h3>
+                        <p>Semtech Corporation is a leading global supplier of high-performance analog and mixed-signal semiconductors and advanced algorithms. The company provides critical infrastructure solutions for IoT, data centers, and telecommunications worldwide.</p>
+                        <p>With pioneering LoRa® devices and wireless RF technology, Semtech enables smart IoT applications that solve critical challenges facing our planet. The company's solutions power the backbone of modern connectivity infrastructure.</p>
+                        <p>Operating globally with a commitment to innovation, Semtech transforms industries through smart connectivity solutions that improve lives and enable digital transformation.</p>
+                    </div>
+                    <div class="team-info">
+                        <h3>GNOC Team & My Mission</h3>
+                        <p><strong>Global Network Operations Center (GNOC)</strong> ensures 24/7 network reliability, monitoring critical infrastructure and maintaining optimal performance with minimal downtime across global operations.</p>
+                        <p><strong>My Role:</strong> As a GNOC intern reporting to Asim Khamari, I'm leveraging cutting-edge AI/ML technologies to automate manual processes, enhance incident detection accuracy, and revolutionize network monitoring capabilities.</p>
+                        <p><strong>Key Impact:</strong> Developing intelligent automation solutions that reduce incident response time by up to 70%, improve detection accuracy, and streamline GNOC team workflows through AI-powered tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Summary Section -->
+    <section id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">11-Week Journey Overview</h2>
+                <p class="section-subtitle">Progressive learning and implementation milestones</p>
+            </div>
+            
+            <div class="timeline-summary">
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <div class="timeline-week">W1-2</div>
+                        <div class="timeline-title">Foundation & Setup</div>
+                        <div class="timeline-dates">July 1-11</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W3</div>
+                        <div class="timeline-title">AI Integration</div>
+                        <div class="timeline-dates">July 14-18</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W4</div>
+                        <div class="timeline-title">TINA Development</div>
+                        <div class="timeline-dates">July 21-27</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W5</div>
+                        <div class="timeline-title">Demo & Feedback</div>
+                        <div class="timeline-dates">July 28-Aug 3</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W6</div>
+                        <div class="timeline-title">NS-3 Simulation</div>
+                        <div class="timeline-dates">Aug 4-8</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W7</div>
+                        <div class="timeline-title">Handoff Manager</div>
+                        <div class="timeline-dates">Aug 11-14</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W8</div>
+                        <div class="timeline-title">UMTS Setup</div>
+                        <div class="timeline-dates">Aug 18-19</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W9</div>
+                        <div class="timeline-title">Error Detection</div>
+                        <div class="timeline-dates">Aug 25-29</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W10</div>
+                        <div class="timeline-title">4G Architecture</div>
+                        <div class="timeline-dates">Sep 1-5</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-week">W11</div>
+                        <div class="timeline-title">SLA Automation</div>
+                        <div class="timeline-dates">Sep 8-12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Network Operations Dashboards</h2>
+                <p class="section-subtitle">Real-time monitoring and analytics for GNOC operations, combining Grafana service availability insights with Power BI ticket and SLA performance analysis.</p>
+            </div>
+            <div class="projects-grid">
+
+    <!-- Grafana Dashboard -->
+    <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3 class="project-title">GNOC Service Availability Dashboard</h3>
+        <div class="project-image">
+            [Grafana Service Availability Visualization]
+        </div>
+        <p class="project-description">
+            Real-time Grafana dashboard for monitoring SMS, Voice, and Data service availability, helping GNOC teams quickly detect network issues and performance anomalies.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-tag">Grafana</span>
+            <span class="tech-tag">Time Series</span>
+            <span class="tech-tag">Monitoring</span>
+            <span class="tech-tag">Network Analytics</span>
+        </div>
+    </div>
+
+    <!-- Power BI Dashboard -->
+    <div class="project-card">
+        <div class="project-icon">📈</div>
+        <h3 class="project-title">GNOC Ticket Analytics Dashboard</h3>
+        <div class="project-image">
+            [Power BI Ticket Analytics Visualization]
+        </div>
+        <p class="project-description">
+            Power BI analytics dashboard providing insights into ticket trends, SLA compliance, MTTR, and incident performance for GNOC operations.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Jira</span>
+            <span class="tech-tag">Data Analytics</span>
+            <span class="tech-tag">SLA Monitoring</span>
+        </div>
+    </div>
+
+</div>
+
+                
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Projects & Solutions</h2>
+                <p class="section-subtitle">AI/ML powered innovations for network operations</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3 class="project-title">TINA - Intelligent Chatbot</h3>
+                    <div class="project-image">
+                        [TINA Architecture Diagram]
+                    </div>
+                    <p class="project-description">AI-powered incident management chatbot with Jira integration, implementing RAG for intelligent ticket retrieval and similarity search using advanced algorithms.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">RAG</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📡</div>
+                    <h3 class="project-title">PCAP Error Analyzer</h3>
+                    <div class="project-image">
+                        [Error Detection Visualization]
+                    </div>
+                    <p class="project-description">Automated error detection for 2G/3G network traces, identifying RNA, System Failure, and Lost Services with graphical call flow visualization.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pyshark</span>
+                        <span class="tech-tag">Wireshark</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NS-2</span>
+                    </div>
+                </div>
+
+                
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container" style=" justify-content: center; align-items: center;">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Comprehensive skill set developed through hands-on experience</p>
+            </div>
+            <div class="skills-container flex" style=" justify-content: center; align-items: center;">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+                <div class="skill-category">
+                    <h3>AI/ML Technologies</h3>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">Claude API</span>
+                    <span class="skill-tag">TF-IDF</span>
+                    <span class="skill-tag">Ollama</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Databases</h3>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">API Development</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Telecom & Networking</h3>
+                    <span class="skill-tag">UMTS/3G</span>
+                    <span class="skill-tag">GPRS</span>
+                    <span class="skill-tag">SS7/SIGTRAN</span>
+                    <span class="skill-tag">LTE/4G</span>
+                    <span class="skill-tag">Diameter Protocol</span>
+                    <span class="skill-tag">Call Flows</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Network Analysis</h3>
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">NS-3</span>
+                    <span class="skill-tag">NS-2</span>
+                    <span class="skill-tag">PCAP Analysis</span>
+                    <span class="skill-tag">Pyshark</span>
+                    <span class="skill-tag">OpenSearch</span>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">Slack</span>
+                    <span class="skill-tag">Power BI</span>
+                                        <span class="skill-tag">Grafana</span>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Learnings Section -->
+    <section id="learnings">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Learnings & Impact</h2>
+                <p class="section-subtitle">Knowledge gained and value delivered to the organization</p>
+            </div>
+            <div class="learnings-grid">
+                <div class="learning-card">
+                    <h3>🌐 Telecom Domain Expertise</h3>
+                    <p> Learned telecom evolution from 1G to 4G, understanding LTE RAN architecture, GPRS, SS7/SIGTRAN protocols, and network troubleshooting methodologies for effective problem resolution.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>🤖 AI/ML for Automation</h3>
+                    <p>Implemented RAG, similarity search algorithms, and integrated LLMs to create intelligent automation solutions that significantly reduce manual effort and improve accuracy.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>🔧 Full-Stack Development</h3>
+                    <p>Built end-to-end applications using Python, Flask delivering production-ready solutions with robust database integration.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>📊 Network Analysis</h3>
+                    <p>Developed expertise in PCAP analysis, network simulation, and real-time monitoring using industry-standard tools, enabling proactive issue detection and resolution.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>🚀 DevOps Excellence</h3>
+                    <p>Understood Git workflows, API integration, deployment strategies, and the development of Grafana and Power BI dashboards to ensure smooth delivery of solutions to production environments.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>👥 Team Collaboration</h3>
+                    <p>Worked effectively with cross-functional teams, delivered presentations to management, and received valuable feedback from senior engineers to continuously improve solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Thank You</h2>
+                </div>  
+                </div>
+
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <span>↑</span>
+    </div>
+
+    <script>
+        // Scroll Progress Bar
+        function updateProgressBar() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        }
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.project-card, .learning-card, .skill-category, .timeline-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Counter Animation for Achievement Numbers
+        function animateCounter(element, target) {
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + (target === 100 ? '%' : '+');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + (target === 100 ? '%' : '+');
+                }
+            };
+            
+            updateCounter();
+        }
+
+        // Trigger counter animation when visible
+        const achievementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target.querySelector('.achievement-number');
+                    const value = parseInt(number.textContent);
+                    animateCounter(number, value);
+                    achievementObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.achievement-card').forEach(card => {
+            achievementObserver.observe(card);
+        });
+
+        // Add hover effect to timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('mouseover', function() {
+                this.style.background = 'linear-gradient(135deg, #dbeafe, #bfdbfe)';
+            });
+            item.addEventListener('mouseout', function() {
+                this.style.background = 'linear-gradient(135deg, #f0f9ff, #e0f2fe)';
+            });
+        });
+    </script>
+</body>
+</html>
